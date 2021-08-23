@@ -243,12 +243,14 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
-symbols_count_time:
-  separated_meta: true
-  item_text_total: true
+#symbols_count_time:
+  #separated_meta: true
+  #item_text_total: true
 
 # 字数统计
 symbols_count_time:
+  separated_meta: true
+  item_text_total: true
   symbols: true
   time: true
   total_symbols: true
