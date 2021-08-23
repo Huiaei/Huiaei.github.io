@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.png">
+  <link rel="mask-icon" href="/images/avatar.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huiaei.cf","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="运算基本算法都支持，即加减乘除，括号。除法结果一定为浮点数类型。 整数除5 &#x2F;&#x2F; 3  &#x3D;&gt; 1结果为向下取整，取更小整数。-5 &#x2F;&#x2F; 3  &#x3D;&gt; -2 模除7 ％ ３  ＝&gt; １ 次方2 ** 4  &#x3D;&gt; 16  保留字   and as assert break class continue def    if elif else except finally for">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python3 语法笔记">
+<meta property="og:url" content="http://huiaei.cf/2020/12/05/Python3%20%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Huiaei&#39;s Notebook">
+<meta property="og:description" content="运算基本算法都支持，即加减乘除，括号。除法结果一定为浮点数类型。 整数除5 &#x2F;&#x2F; 3  &#x3D;&gt; 1结果为向下取整，取更小整数。-5 &#x2F;&#x2F; 3  &#x3D;&gt; -2 模除7 ％ ３  ＝&gt; １ 次方2 ** 4  &#x3D;&gt; 16  保留字   and as assert break class continue def    if elif else except finally for">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-05T03:19:27.000Z">
+<meta property="article:modified_time" content="2021-08-23T02:42:54.475Z">
+<meta property="article:author" content="Huiaei">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://huiaei.cf/2020/12/05/Python3%20%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://huiaei.cf/2020/12/05/Python3%20%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/","path":"2020/12/05/Python3 语法笔记/","title":"Python3 语法笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python3 语法笔记 | Huiaei's Notebook</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Huiaei's Notebook</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">好记性不如烂笔头</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E9%99%A4"><span class="nav-number">1.1.</span> <span class="nav-text">整数除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E9%99%A4"><span class="nav-number">1.2.</span> <span class="nav-text">模除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A1%E6%96%B9"><span class="nav-number">1.3.</span> <span class="nav-text">次方</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E5%AD%97"><span class="nav-number">2.</span> <span class="nav-text">保留字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#True-False-%E5%B8%83%E5%B0%94%E5%80%BC%EF%BC%88%E6%B3%A8%E6%84%8F%E5%A4%A7%E5%B0%8F%E5%86%99%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">True False 布尔值（注意大小写）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#not-%E5%8F%96%E9%9D%9E"><span class="nav-number">2.2.</span> <span class="nav-text">not 取非</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and-or-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="nav-number">2.3.</span> <span class="nav-text">and or 逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD"><span class="nav-number">2.4.</span> <span class="nav-text">逻辑判断</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E7%AD%89%E5%8F%B7-%E5%88%A4%E6%96%AD%E7%9B%B8%E7%AD%89"><span class="nav-number">2.4.1.</span> <span class="nav-text">双等号 &#x3D;&#x3D; 判断相等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%8D%E7%AD%89"><span class="nav-number">2.4.2.</span> <span class="nav-text">!&#x3D; 判断不等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.4.3.</span> <span class="nav-text">比较大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#None-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.5.</span> <span class="nav-text">None 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is-%E6%AF%94%E8%BE%83%E6%8C%87%E5%90%91"><span class="nav-number">2.6.</span> <span class="nav-text">is 比较指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print-%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA"><span class="nav-number">2.7.</span> <span class="nav-text">print 打印输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del-%E5%88%A0%E9%99%A4"><span class="nav-number">2.8.</span> <span class="nav-text">del 删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in-%E5%88%A4%E6%96%AD%E5%8C%85%E5%90%AB"><span class="nav-number">2.9.</span> <span class="nav-text">in 判断包含</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-elif-else-%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.10.</span> <span class="nav-text">if elif else 条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.11.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.11.1.</span> <span class="nav-text">for 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.11.2.</span> <span class="nav-text">while 循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">2.12.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">2.12.1.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#raise-%E8%A7%A6%E5%8F%91%E5%BC%82%E5%B8%B8"><span class="nav-number">2.12.2.</span> <span class="nav-text">raise 触发异常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield-%E8%BF%AD%E4%BB%A3%E7%94%9F%E6%88%90"><span class="nav-number">2.13.</span> <span class="nav-text">yield 迭代生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#def-%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-number">2.14.</span> <span class="nav-text">def 定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8"><span class="nav-number">2.14.1.</span> <span class="nav-text">调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-number">2.15.</span> <span class="nav-text">lambda 匿名函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.1.1.</span> <span class="nav-text">形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">3.1.2.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E4%B8%BA%E5%88%97%E8%A1%A8"><span class="nav-number">3.1.3.</span> <span class="nav-text">作为列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.1.4.</span> <span class="nav-text">格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">3.2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#append-%E5%9C%A8%E5%88%97%E8%A1%A8%E6%9C%80%E5%90%8E%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.1.</span> <span class="nav-text">.append 在列表最后添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop-%E5%8E%BB%E9%99%A4%E5%88%97%E8%A1%A8%E6%9C%80%E5%90%8E%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.2.</span> <span class="nav-text">.pop 去除列表最后的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E5%89%B2"><span class="nav-number">3.2.3.</span> <span class="nav-text">切割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%8A%A0%E5%88%97%E8%A1%A8%EF%BC%8C%E4%BF%9D%E7%95%99%E9%87%8D%E5%A4%8D"><span class="nav-number">3.2.4.</span> <span class="nav-text">相加列表，保留重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extend-%E6%8B%BC%E6%8E%A5%E5%88%97%E8%A1%A8%EF%BC%8C%E4%BF%9D%E7%95%99%E9%87%8D%E5%A4%8D"><span class="nav-number">3.2.5.</span> <span class="nav-text">.extend 拼接列表，保留重复</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84"><span class="nav-number">3.3.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E8%B5%8B%E5%80%BC%E5%8F%98%E9%87%8F"><span class="nav-number">3.3.1.</span> <span class="nav-text">元组赋值变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%8F%98%E9%87%8F"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">交换变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-number">3.4.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC"><span class="nav-number">3.4.1.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update-%E8%B5%8B%E5%80%BC"><span class="nav-number">3.4.2.</span> <span class="nav-text">.update 赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%94%AE%E5%8F%96%E5%80%BC"><span class="nav-number">3.4.3.</span> <span class="nav-text">使用键取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keys-%E5%8F%96%E5%87%BA%E5%AD%97%E5%85%B8%E6%89%80%E6%9C%89%E7%9A%84%E9%94%AE"><span class="nav-number">3.4.4.</span> <span class="nav-text">.keys 取出字典所有的键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#values-%E5%8F%96%E5%87%BA%E5%AD%97%E5%85%B8%E6%89%80%E6%9C%89%E7%9A%84%E5%80%BC"><span class="nav-number">3.4.5.</span> <span class="nav-text">.values 取出字典所有的值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%BF%E5%85%8DKeyError%E9%94%99%E8%AF%AF"><span class="nav-number">3.4.5.1.</span> <span class="nav-text">避免KeyError错误</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">3.4.6.</span> <span class="nav-text">默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E9%94%99%E8%AF%AF%E7%9A%84%E9%94%AE%E6%97%B6%EF%BC%8C%E8%BF%94%E5%9B%9E%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">3.4.6.1.</span> <span class="nav-text">访问错误的键时，返回默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%94%AE%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">3.4.6.2.</span> <span class="nav-text">设置键的默认值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">3.5.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC-%E4%B8%8E%E5%AD%97%E5%85%B8%E7%B1%BB%E4%BC%BC"><span class="nav-number">3.5.1.</span> <span class="nav-text">赋值 与字典类似</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">3.5.2.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E9%9B%86"><span class="nav-number">3.5.3.</span> <span class="nav-text">交集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E9%9B%86"><span class="nav-number">3.5.4.</span> <span class="nav-text">并集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E9%9B%86"><span class="nav-number">3.5.5.</span> <span class="nav-text">补集</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E5%8F%B7"><span class="nav-number">4.</span> <span class="nav-text">序号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">4.1.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF"><span class="nav-number">4.2.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">取用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BD%99"><span class="nav-number">5.</span> <span class="nav-text">其余</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bool-%E5%88%A4%E6%96%AD%E5%B8%83%E5%B0%94%E5%80%BC"><span class="nav-number">5.1.</span> <span class="nav-text">bool()  判断布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#range-%E8%B5%B7%E5%A7%8B%E5%80%BC-%E6%9C%80%E5%90%8E%E5%80%BC%E5%90%8E%E4%B8%80%E4%BD%8D"><span class="nav-number">5.2.</span> <span class="nav-text">range(起始值,最后值后一位)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Huiaei</p>
+  <div class="site-description" itemprop="description">Huiaei 的小本本</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/12/05/Python3%20%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huiaei">
+      <meta itemprop="description" content="Huiaei 的小本本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huiaei's Notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python3 语法笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-05 11:19:27" itemprop="dateCreated datePublished" datetime="2020-12-05T11:19:27+08:00">2020-12-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-08-23 10:42:54" itemprop="dateModified" datetime="2021-08-23T10:42:54+08:00">2021-08-23</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>基本算法都支持，即加减乘除，括号。<br>除法结果一定为浮点数类型。</p>
+<h2 id="整数除"><a href="#整数除" class="headerlink" title="整数除"></a>整数除</h2><p>5 // 3  =&gt; 1<br>结果为向下取整，取更小整数。<br>-5 // 3  =&gt; -2</p>
+<h2 id="模除"><a href="#模除" class="headerlink" title="模除"></a>模除</h2><p>7 ％ ３  ＝&gt; １</p>
+<h2 id="次方"><a href="#次方" class="headerlink" title="次方"></a>次方</h2><p>2 ** 4  =&gt; 16</p>
+<hr>
+<h1 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h1><table>
+<thead>
+<tr>
+<th>and</th>
+<th>as</th>
+<th>assert</th>
+<th>break</th>
+<th>class</th>
+<th>continue</th>
+<th>def</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>if</td>
+<td>elif</td>
+<td>else</td>
+<td>except</td>
+<td>finally</td>
+<td>for</td>
+<td>from</td>
+</tr>
+<tr>
+<td>import</td>
+<td>in</td>
+<td>is</td>
+<td>lambda</td>
+<td>not</td>
+<td>or</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>raise</td>
+<td>return</td>
+<td>try</td>
+<td>while</td>
+<td>with</td>
+<td>yield</td>
+<td>del</td>
+</tr>
+<tr>
+<td>global</td>
+<td>nonlocal</td>
+<td>True</td>
+<td>False</td>
+<td>None</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="True-False-布尔值（注意大小写）"><a href="#True-False-布尔值（注意大小写）" class="headerlink" title="True False 布尔值（注意大小写）"></a>True False 布尔值（注意大小写）</h2><p>True<br>False</p>
+<p>None，0，空字符串，空列表，空字典都算是False<br>所有其他值都是True</p>
+<h2 id="not-取非"><a href="#not-取非" class="headerlink" title="not 取非"></a>not 取非</h2><p><code>not</code> True  =&gt; False<br><code>not</code> False  =&gt; True</p>
+<h2 id="and-or-逻辑运算"><a href="#and-or-逻辑运算" class="headerlink" title="and or 逻辑运算"></a>and or 逻辑运算</h2><p>True <code>and</code> False  =&gt;False<br>False <code>or</code> True  =&gt; True</p>
+<h2 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断"></a>逻辑判断</h2><h3 id="双等号-判断相等"><a href="#双等号-判断相等" class="headerlink" title="双等号 == 判断相等"></a>双等号 == 判断相等</h3><p>1 == 1  =&gt;True<br>1 == 2  =&gt;False</p>
+<h3 id="判断不等"><a href="#判断不等" class="headerlink" title="!= 判断不等"></a>!= 判断不等</h3><p>1 != 1  =&gt;False<br>1 != 2  =&gt;True</p>
+<h3 id="比较大小"><a href="#比较大小" class="headerlink" title="比较大小"></a>比较大小</h3><p>1 &lt; 10   =&gt; True<br>1 &gt; 10   =&gt; False<br>2 &lt;= 2   =&gt; True    小于等于<br>2 &gt;= 2   =&gt; True    大于等于<br>1 &lt; 2 &lt; 3  =&gt; True<br>2 &lt; 3 &lt; 2  =&gt; False</p>
+<h2 id="None-对象"><a href="#None-对象" class="headerlink" title="None 对象"></a>None 对象</h2><p><code>None</code>是个对象，与它比较使用<code>is</code><br>“etc” is None  =&gt; False<br>None is None  =&gt; True</p>
+<h2 id="is-比较指向"><a href="#is-比较指向" class="headerlink" title="is 比较指向"></a>is 比较指向</h2><p>is是用来比较两个变量是否指向同一个对象。</p>
+<h2 id="print-打印输出"><a href="#print-打印输出" class="headerlink" title="print 打印输出"></a>print 打印输出</h2><p>print()</p>
+<h2 id="del-删除"><a href="#del-删除" class="headerlink" title="del 删除"></a>del 删除</h2><p>del 列表[元素序号]<br>del 字典[键]</p>
+<h2 id="in-判断包含"><a href="#in-判断包含" class="headerlink" title="in 判断包含"></a>in 判断包含</h2><p>元素 in 列表<br>元素 in 元组<br>键 in 字典<br>元素 in 集合<br>=&gt; Ture/False</p>
+<h2 id="if-elif-else-条件"><a href="#if-elif-else-条件" class="headerlink" title="if elif else 条件"></a>if elif else 条件</h2><p>不要忘记条件判断语句后面的冒号 <code>:</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件<span class="number">1</span>:</span><br><span class="line">    执行语句</span><br><span class="line"><span class="keyword">elif</span> 条件<span class="number">2</span>:</span><br><span class="line">    执行语句</span><br><span class="line"><span class="keyword">elif</span> 条件x:</span><br><span class="line">    执行语句</span><br><span class="line"><span class="keyword">else</span> 最后条件:</span><br><span class="line">    执行语句</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 条件:</span><br><span class="line">    执行语句</span><br></pre></td></tr></table></figure>
+<h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件:</span><br><span class="line">    执行语句</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    需要判断运行的执行代码</span><br><span class="line"><span class="keyword">except</span> KeyError:    <span class="comment">#指定错误类型</span></span><br><span class="line">    出现异常时执行的代码</span><br><span class="line">excep (KeyError,TypeError):    <span class="comment">#可指定多种错误</span></span><br><span class="line">    <span class="keyword">pass</span>    <span class="comment"># 无操作</span></span><br><span class="line"><span class="keyword">except</span> KeyError <span class="keyword">as</span> err:    <span class="comment">#储存错误信息到 err</span></span><br><span class="line">    <span class="built_in">print</span>(err)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    没有出现异常执行的代码</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    不管有无异常都执行的代码 </span><br></pre></td></tr></table></figure>
+<h3 id="raise-触发异常"><a href="#raise-触发异常" class="headerlink" title="raise 触发异常"></a>raise 触发异常</h3><p>raise 错误名(错误信息)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> NameError(<span class="string">&#x27;error&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>=&gt;NameError:error</p>
+<h2 id="yield-迭代生成"><a href="#yield-迭代生成" class="headerlink" title="yield 迭代生成"></a>yield 迭代生成</h2><p>yield会暂停并保存当前所有运行信息，返回yield的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span>(<span class="params">n</span>):</span> <span class="comment"># 生成器函数 - 斐波那契</span></span><br><span class="line">    a, b, counter = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> (counter &gt; n): </span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">yield</span> a <span class="comment">#返回a的值</span></span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        counter += <span class="number">1</span></span><br><span class="line">f = fibonacci(<span class="number">10</span>) <span class="comment"># f 是一个迭代器，由生成器返回生成，a的值存于f并迭代</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="def-定义函数"><a href="#def-定义函数" class="headerlink" title="def 定义函数"></a>def 定义函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名(<span class="params">参数</span>):</span>  <span class="comment">#参数带有一个*为元组类型导入，**为字典类型导入</span></span><br><span class="line">    函数语句</span><br><span class="line">    <span class="keyword">return</span> <span class="comment">#返回值</span></span><br></pre></td></tr></table></figure>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>函数名(参数)</p>
+<h2 id="lambda-匿名函数"><a href="#lambda-匿名函数" class="headerlink" title="lambda 匿名函数"></a>lambda 匿名函数</h2><p>函数名 = lambda 参数:执行语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span> = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">10</span>, <span class="number">20</span> ))</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, <span class="built_in">sum</span>( <span class="number">20</span>, <span class="number">20</span> ))</span><br></pre></td></tr></table></figure>
+<p>=&gt; 相加后的值为 :  30<br>=&gt; 相加后的值为 :  40</p>
+<hr>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h3><p>单双引号都可<br>“这是个字符串”<br>‘这也是个字符串’</p>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>“Hello” + “world!”   =&gt; “Helloworld!”</p>
+<h3 id="作为列表"><a href="#作为列表" class="headerlink" title="作为列表"></a>作为列表</h3><p>“This is a string”[0]  =&gt; ‘T’</p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>“{} can be {}”.format(“strings”, “interpolated”)<br>=&gt; strings can be interpolated</p>
+<p>“{0} be nimble, {0} be quick, {0} jump over the {1}”.format(“Jack”, “candle stick”)<br>=&gt; “Jack be nimble, Jack be quick, Jack jump over the candle stick”</p>
+<p>“{name} wants to eat {food}”.format(name=”Bob”, food=”lasagna”)<br>=&gt; “Bob wants to eat lasagna”</p>
+<p>兼容Python2的格式化<br>“%s can be %s the %s way” % (“strings”, “interpolated”, “old”)<br>=&gt; “strings can be interpolated the old way”</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表名 = [值]<br>li = [v1,v2,v3]</p>
+<h3 id="append-在列表最后添加元素"><a href="#append-在列表最后添加元素" class="headerlink" title=".append 在列表最后添加元素"></a>.append 在列表最后添加元素</h3><p>列表名.append(值)<br>li.append(v4)<br>=&gt; li = [v1,v2,v3,v4]</p>
+<h3 id="pop-去除列表最后的元素"><a href="#pop-去除列表最后的元素" class="headerlink" title=".pop 去除列表最后的元素"></a>.pop 去除列表最后的元素</h3><p>列表名.pop()<br>li.pop()<br>=&gt; li = [v1,v2,v3]</p>
+<h3 id="切割"><a href="#切割" class="headerlink" title="切割"></a>切割</h3><p>列表名[开始序号:终止序号:步伐]<br>步伐，即脚步跨度，间隔多少取一次。<br>开始序号、终止序号、步伐都可省略，默认值分别为0,-1,1，即默认从头开始，到尾结束，步伐为1。</p>
+<h3 id="相加列表，保留重复"><a href="#相加列表，保留重复" class="headerlink" title="相加列表，保留重复"></a>相加列表，保留重复</h3><p>otherli = [s1,s2,s3]<br>li + otherli<br>=&gt; [v1,v2,v3,s1,s2,s3]</p>
+<p>li + [q1,q2,q3]<br>=&gt; [v1,v2,v3,s1,s2,s3,q1,q2,q3]</p>
+<h3 id="extend-拼接列表，保留重复"><a href="#extend-拼接列表，保留重复" class="headerlink" title=".extend 拼接列表，保留重复"></a>.extend 拼接列表，保留重复</h3><p>li = [v1,v2,v3]<br>otherli = [s1,s2,s3]<br>li.extend(otherli)<br>=&gt;[v1,v2,v3,s1,s2,s3]</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组名 = (值)<br>列表所允许的操作元组大都可以。</p>
+<h3 id="元组赋值变量"><a href="#元组赋值变量" class="headerlink" title="元组赋值变量"></a>元组赋值变量</h3><p>A,B,C = (Q,W,E)<br>=&gt;A=Q;B=W;C=E<br>括号可以省略<br>E,F,G = Z,X,C<br>=&gt;E=Z;F=X;G=C</p>
+<h4 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h4><p>O = 1<br>P = 2<br>O,P = P,O<br>=&gt;O=2;P=1</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><p>字典名 = {键:值}<br>dict = {‘1’:A,’2’:B}</p>
+<h3 id="update-赋值"><a href="#update-赋值" class="headerlink" title=".update 赋值"></a>.update 赋值</h3><p>dict.update({‘3’:C})<br>=&gt;{‘1’:A,’2’:B,’3’:C}</p>
+<h3 id="使用键取值"><a href="#使用键取值" class="headerlink" title="使用键取值"></a>使用键取值</h3><p>dict[‘1’]<br>=&gt;A</p>
+<h3 id="keys-取出字典所有的键"><a href="#keys-取出字典所有的键" class="headerlink" title=".keys 取出字典所有的键"></a>.keys 取出字典所有的键</h3><p>list(dict.keys())<br>=&gt;[‘1’,’2’,’3’]</p>
+<h3 id="values-取出字典所有的值"><a href="#values-取出字典所有的值" class="headerlink" title=".values 取出字典所有的值"></a>.values 取出字典所有的值</h3><p>list(dict.values())<br>=&gt;[A,B,C]</p>
+<p>###KeyError 错误<br>访问不存在的值出现该错误<br>dict[‘4’]<br>=&gt;KeyError</p>
+<h4 id="避免KeyError错误"><a href="#避免KeyError错误" class="headerlink" title="避免KeyError错误"></a>避免KeyError错误</h4><p>使用<code>.get</code>避免<br>dict.get(‘d’)<br>=&gt;None</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><h4 id="访问错误的键时，返回默认值"><a href="#访问错误的键时，返回默认值" class="headerlink" title="访问错误的键时，返回默认值"></a>访问错误的键时，返回默认值</h4><p>字典名.get(键,默认值)<br>dict.get(‘4’,404)<br>=&gt;404</p>
+<h4 id="设置键的默认值"><a href="#设置键的默认值" class="headerlink" title="设置键的默认值"></a>设置键的默认值</h4><p>字典名.setdefault(键,默认值)</p>
+<p>个人理解为类似 .upadte ，不过 .update 是直接覆盖， .setdefault 如果键有值则保留不变，没有则添加。</p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>集合名 = set()</p>
+<h3 id="赋值-与字典类似"><a href="#赋值-与字典类似" class="headerlink" title="赋值 与字典类似"></a>赋值 与字典类似</h3><p>aset = {1,1,2,2,3}   <strong>会合并重复项</strong><br>=&gt;{1,2,3}</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>aset.add(4)<br>=&gt;{1,2,3,4}</p>
+<h3 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h3><p>bset = {3,4,5,6}<br>aset &amp; bset<br>=&gt;{3,4}</p>
+<h3 id="并集"><a href="#并集" class="headerlink" title="并集"></a>并集</h3><p>aset | bset<br>=&gt;{1,2,3,4,5,6}</p>
+<h3 id="补集"><a href="#补集" class="headerlink" title="补集"></a>补集</h3><p>{1,2,3,4} - {2,3,5}<br>=&gt;{1,4}<br>aset - bset<br>=&gt;{1,2}</p>
+<h1 id="序号"><a href="#序号" class="headerlink" title="序号"></a>序号</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>正向排序从 0 开始，逆向排序从 -1 开始。<br>|-6|-5|-4|-3|-2|-1|<br>|—-|—-|—-|—-|—-|—-|<br>|这|是|个|例|子|。|<br>|0|1|2|3|4|5|</p>
+<p>#迭代<br>从第一个元素开始，只能向前，不能使用序号访问<br>##创建<br>iter()<br>next()</p>
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>StopIteration  迭代完成</p>
+<h2 id="取用"><a href="#取用" class="headerlink" title="取用"></a>取用</h2><p>遍历，list，.<strong>next</strong>()</p>
+<h1 id="其余"><a href="#其余" class="headerlink" title="其余"></a>其余</h1><h2 id="bool-判断布尔值"><a href="#bool-判断布尔值" class="headerlink" title="bool()  判断布尔值"></a>bool()  判断布尔值</h2><p>bool(0)<br>=&gt;False</p>
+<h2 id="range-起始值-最后值后一位"><a href="#range-起始值-最后值后一位" class="headerlink" title="range(起始值,最后值后一位)"></a>range(起始值,最后值后一位)</h2><p>从0到输入值（不包括输入值），起始值可省略，默认为0<br>range(3)<br>=&gt;0,1,2</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/21/Mklink%20%E5%91%BD%E4%BB%A4%EF%BC%88%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5%E3%80%81%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5%E3%80%81%E7%A1%AC%E9%93%BE%E6%8E%A5%E3%80%81%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89/" rel="prev" title="Mklink 命令（符号链接、目录链接、硬链接、快捷方式的区别）">
+                  <i class="fa fa-chevron-left"></i> Mklink 命令（符号链接、目录链接、硬链接、快捷方式的区别）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/22/npm%E9%95%9C%E5%83%8F/" rel="next" title="npm镜像">
+                  npm镜像 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Huiaei</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
