@@ -74,6 +74,22 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Docker容器中无法运行二进制文件并出现：/bin/sh: xxx not found</title>
+    <url>/2021/08/30/Docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在Docker容器中，运行二进制文件出现 <code>/bin/sh: xxx not found</code> ，使用 Chmod 赋予执行权限依旧出现此问题。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>容器内执行 <code>mkdir /lib64 &amp;&amp; ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2</code></p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>镜像可能使用的是以alpine镜像为基础的项目，可能出现动态链接库位置错误问题。</p>
+<p>一般二进制文件在linux系统下编译，动态链接库是到/lib64目录下的，而在alpine镜像内无/lib64目录(<a href="https://github.com/gliderlabs/docker-alpine/issues/11">参考</a>)。</p>
+<p>alpine镜像使用的是musl libc而不是gun libc，因而动态链接库的位置不一致。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p> <a href="https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker">https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker</a></p>
+<p> <a href="https://github.com/docker-library/openjdk/issues/77">https://github.com/docker-library/openjdk/issues/77</a></p>
+<p> <a href="https://github.com/gliderlabs/docker-alpine/issues/11">https://github.com/gliderlabs/docker-alpine/issues/11</a></p>
+<p> <a href="https://github.com/sgerrand/alpine-pkg-glibc/releases">https://github.com/sgerrand/alpine-pkg-glibc/releases</a></p>
+<hr>
+<p>引用自：<a href="https://blog.51cto.com/welcomeweb/2652026">alpine镜像启动的容器内运行二进制文件出现：/bin/sh: xxx not found</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Git 命令使用/取消代理</title>
     <url>/2020/02/15/Git%20%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8&amp;%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/</url>
     <content><![CDATA[<p>假设代理到目标 socks5://127.0.0.1:10808 </p>
