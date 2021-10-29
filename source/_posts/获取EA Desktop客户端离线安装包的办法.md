@@ -54,7 +54,7 @@ isTop: false
 
 >Q：什么时候发现的？
 >
->A：在2021年10月28日23时左右（UTC+8），可能方法具有时效性。
+>A：在2021年10月28日23时左右（UTC+8），方法可能具有时效性。
 
 >Q：第一步的下载的是`EA Desktop Installer`，为什么第二步是`EAappInstaller.exe`
 >
