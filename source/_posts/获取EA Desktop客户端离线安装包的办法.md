@@ -1,3 +1,14 @@
+---
+title: '获取EA Desktop客户端离线安装包的办法'
+date: 2021-10-29 11:30:19
+tags: []
+published: true
+hideInList: false
+feature: 
+isTop: false
+---
+
+
 # 获取EA Desktop客户端离线安装包的办法
 
 ## 方法
