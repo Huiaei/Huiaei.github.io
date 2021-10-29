@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,6 +208,102 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/10/08/WSL%EF%BC%88Windows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%EF%BC%89%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%20Shell%20%E4%B8%BA%20Zsh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huiaei">
+      <meta itemprop="description" content="Huiaei 的小本本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huiaei's Notebook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/10/08/WSL%EF%BC%88Windows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%EF%BC%89%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%20Shell%20%E4%B8%BA%20Zsh/" class="post-title-link" itemprop="url">WSL（Windows子系统Linux）设置默认 Shell 为 Zsh</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-08 20:35:04" itemprop="dateCreated datePublished" datetime="2020-10-08T20:35:04+08:00">2020-10-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
+      </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>265</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li>安装 Zsh ，nano或者vim（选择你会使用的文本编辑器）</li>
+<li>使用 Linux 设置默认 Shell 为 Zsh 命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></li>
+<li>使用上述指令后，重新使用CMD或者PowerShell进入WSL时，会发现依旧为默认的Bash，此时需要编辑文件生效。使用你熟悉的文本编辑工具，vim或者nano，打开<code>~/bashrc</code>，向里面添加：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ $- == *i* ]] &amp;&amp; $(command -v zsh) || echo &quot;ZSH is not installed&quot;</span><br></pre></td></tr></table></figure>
+<p>之后保存即可。</p>
+<hr>
+<blockquote>
+<p>参考自：<a target="_blank" rel="noopener" href="https://limxw.com/posts/wsl-use-zsh/">WSL 中设置 zsh 为默认 SHELL</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/07/14/%E7%94%B5%E4%BF%A1%E7%BD%91%E5%85%B3HG6201T%E8%8E%B7%E5%8F%96%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%88%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -239,7 +335,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -333,7 +429,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -427,7 +523,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -535,7 +631,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -652,7 +748,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -946,7 +1042,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1042,7 +1138,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1130,7 +1226,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1208,14 +1304,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">14k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

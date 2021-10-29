@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,6 +208,191 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2021/10/29/%E8%8E%B7%E5%8F%96EA%20Desktop%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%8A%9E%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huiaei">
+      <meta itemprop="description" content="Huiaei 的小本本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huiaei's Notebook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/29/%E8%8E%B7%E5%8F%96EA%20Desktop%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%8A%9E%E6%B3%95/" class="post-title-link" itemprop="url">获取EA Desktop客户端离线安装包的办法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-29 11:30:19 / 修改时间：12:02:06" itemprop="dateCreated datePublished" datetime="2021-10-29T11:30:19+08:00">2021-10-29</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="获取EA-Desktop客户端离线安装包的办法"><a href="#获取EA-Desktop客户端离线安装包的办法" class="headerlink" title="获取EA Desktop客户端离线安装包的办法"></a>获取EA Desktop客户端离线安装包的办法</h1><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol>
+<li><p>首先获取最新的在线安装包 <a target="_blank" rel="noopener" href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EADesktopInstaller.exe">EA Desktop Installer</a></p>
+</li>
+<li><p>使用压缩工具打开<code>EAappInstaller.exe</code>，得到类似下方的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">u0</span><br><span class="line">u1</span><br><span class="line">u2</span><br></pre></td></tr></table></figure></li>
+<li><p>使用文本编辑工具打开第一个文件： <code>0</code> </p>
+</li>
+<li><p>使用搜索功能或者翻阅的方式找到类似于下方的链接（使用换行后大约在整体的中间部分）</p>
+<p><code>https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAapp-12.0.150.5030-639.msi</code></p>
+</li>
+<li><p>使用下载工具下载该链接即可。</p>
+</li>
+<li><p>请注意有些依赖文件，如果没有是需要下载安装的，推荐直接下载安装一遍，下载地址在发现此链接位置的附近。</p>
+<p>提供一个当前<code>12.0.150.5030</code>版本的所有下载列表，顺便说一句，下载的<code>EAapp.msi</code>安装时是可以选安装位置的。</p>
+<p>依赖安装完记得<strong>重启计算机</strong>。</p>
+</li>
+</ol>
+<blockquote>
+<p>vcredist10.x86.exe : <a target="_blank" rel="noopener" href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-10.0.40219.x86.exe">https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-10.0.40219.x86.exe</a></p>
+</blockquote>
+<blockquote>
+<p>vcredist14.x86.exe ：<a target="_blank" rel="noopener" href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x86.exe">https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x86.exe</a></p>
+</blockquote>
+<blockquote>
+<p>vcredist14.x64.exe : <a target="_blank" rel="noopener" href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x64.exe">https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x64.exe</a></p>
+</blockquote>
+<blockquote>
+<p>EAapp.msi : <a target="_blank" rel="noopener" href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAapp-12.0.150.5030-639.msi">https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAapp-12.0.150.5030-639.msi</a></p>
+</blockquote>
+<h2 id="本人使用的工具"><a href="#本人使用的工具" class="headerlink" title="本人使用的工具"></a>本人使用的工具</h2><ul>
+<li><p>压缩工具：<a target="_blank" rel="noopener" href="https://www.7-zip.org/">7zip</a></p>
+</li>
+<li><p>文本编辑工具：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+</li>
+<li><p>下载工具推荐使用多线程下载工具</p>
+</li>
+</ul>
+<h2 id="其他的说明"><a href="#其他的说明" class="headerlink" title="其他的说明"></a>其他的说明</h2><blockquote>
+<p>Q：什么时候发现的？</p>
+<p>A：在2021年10月28日23时左右（UTC+8），可能方法具有时效性。</p>
+</blockquote>
+<blockquote>
+<p>Q：第一步的下载的是<code>EA Desktop Installer</code>，为什么第二步是<code>EAappInstaller.exe</code></p>
+<p>A：EA的下载链接跳转到EAappInstaller.exe，现在EA Desktop还处于开放测试阶段，不清楚之后会不会修改。</p>
+</blockquote>
+<blockquote>
+<p>Q：为什么我找到的离线完整包是<code>EADesktop-xx.x.xxx.xxxx</code>结尾的？</p>
+<p>A：早期的链接的确是这个结尾，后面EA可能修改文件名了，将新版本链接中的的<code>EAapp</code>修改为<code>EADesktop</code>测试是无法获取到资源的。</p>
+</blockquote>
+<hr>
+<p>到此正文已经结束，下面是找到这个链接的过程，仅记录，不对方法有任何补充说明</p>
+<hr>
+<h2 id="折腾步骤"><a href="#折腾步骤" class="headerlink" title="折腾步骤"></a>折腾步骤</h2><h3 id="1-找规律"><a href="#1-找规律" class="headerlink" title="1. 找规律"></a>1. 找规律</h3><p>一开始从网上收集了一下各位网友发布的离线完整包下载地址，我将链接收集保存下来并发现规律。</p>
+<p>完整包的链接样式为<code>https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EADesktop-&#123;version&#125;.msi</code>，这个在后来挖掘文件的时候也发现了这个样式。在第二步中的<code>u0</code>中也发现类似的，使用压缩工具打开，进入<code>u0/.rsrc/EAX_CONFIG/</code>文件夹中的<code>INTEGRATION.CFG</code>，也发现了下面的内容</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[updater]</span></span><br><span class="line">    <span class="attr">url</span> = <span class="string">&quot;https://autopatch-integration.juno.ea.com&quot;</span></span><br><span class="line"><span class="section">[installer]</span></span><br><span class="line">    <span class="attr">downloadurl</span> = <span class="string">&quot;https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAappInstaller-&#123;version&#125;.exe&quot;</span></span><br><span class="line"><span class="section">[telemetry]</span></span><br><span class="line">    <span class="attr">ratt.url</span> = <span class="string">&quot;https://ratt-dev.juno.ea.com/ratt/telm&quot;</span></span><br><span class="line">    <span class="attr">pin.url</span> = <span class="string">&quot;https://pin-river-test.data.ea.com/pinEvents&quot;</span></span><br><span class="line"><span class="section">[machine]</span></span><br><span class="line">    <span class="attr">updateBucket</span> = <span class="number">999</span></span><br></pre></td></tr></table></figure>
+
+<p>可以发现<code>[installer]</code>处有个“格式化”的链接，但是到后面发现这个并不是，只要你带入版本号去下载，其实下载的还是在线安装包，不过EA可能也保存了之前老版本的安装器，毕竟能下载，不过这点没有去验证。</p>
+<p>已经知道了链接的方式，那么我从收集来的下载链接中提取出版本号，也就是<code>&#123;version&#125;</code>的内容，并形成一张表（最后一行是最后加的）。</p>
+<table>
+<thead>
+<tr>
+<th align="center">xx</th>
+<th align="center">.x</th>
+<th align="center">.xxx</th>
+<th align="center">.xxxx</th>
+<th align="center">-xxx</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">12</td>
+<td align="center">0</td>
+<td align="center">38</td>
+<td align="center">4820</td>
+<td align="center">153</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">0</td>
+<td align="center">100</td>
+<td align="center">4941</td>
+<td align="center">417</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">0</td>
+<td align="center">113</td>
+<td align="center">4970</td>
+<td align="center">474</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="center">0</td>
+<td align="center">150</td>
+<td align="center">5030</td>
+<td align="center">639</td>
+</tr>
+</tbody></table>
+<p>那么最新的版本号从哪里来？当时我也是突发想法，查看了<code>EAappInstaller.exe</code>的属性，查看这个文件的版本号，得到了<code>12.0.150.5030</code>，最后找到的结果也证实了确实是这个。</p>
+<p>但是通过收集的链接会发现还有小尾巴 <code>-xxx</code>，如何得到？我当时通过表格企图找到规律，但是这个值不是简单的规律，只能知道<code>xx.x.xxx.xxxx</code>越大<code>-xxx</code>也越大。</p>
+<h3 id="2-获取在线安装器的临时配置文件"><a href="#2-获取在线安装器的临时配置文件" class="headerlink" title="2. 获取在线安装器的临时配置文件"></a>2. 获取在线安装器的临时配置文件</h3><p>参考<a target="_blank" rel="noopener" href="https://answers.ea.com/t5/Bug-Reports-Technical-Issues/Can-t-install-reinstall-EA-Desktop/td-p/9805968">Can’t install/reinstall EA Desktop - EA问答 </a></p>
+<p>按照方法，的确获取到了下载的链接。不过需要运行在线安装器，生成临时的配置文件。</p>
+<h3 id="3-网络抓包"><a href="#3-网络抓包" class="headerlink" title="3. 网络抓包"></a>3. 网络抓包</h3><p>当时想着<code>&#123;version&#125;</code>会不会是通过网络获取的，而这个安装器是一个“通用”的安装器。（这个最后思考了下是不可能的，如果是通用的安装器，那么为什么程序的签名时间是最近的时间）</p>
+<p>安装<code>fiddler</code>进行抓包，使用签名获取的版本号进行搜索，复现正常安装流程到下载文件阶段。</p>
+<p>发现只有两个匹配的网络请求，最早出现版本号的位置再向更早的时间摸索，并没有发现有请求已经返回版本号的存在，所以当时判断不来源在线。</p>
+<h3 id="4-挖掘文件"><a href="#4-挖掘文件" class="headerlink" title="4. 挖掘文件"></a>4. 挖掘文件</h3><p>其实之前就一直在翻文件内容，只不过当时没有注意到没有换行，第二步发现的<code>0</code>其实也打开了不止三次，只是最后才更加注意了，发现是个长的单行，当时就打开自动换行功能，发现了链接位置。</p>
+<p><del>(其实一直开着搜索版本号把文件都打开了一遍，发现这里有匹配项而已)</del></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2021/08/30/Docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -239,7 +424,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -335,7 +520,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -422,7 +607,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -535,7 +720,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -744,7 +929,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -893,7 +1078,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1001,7 +1186,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1094,7 +1279,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1219,7 +1404,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
+        <time title="修改时间：2021-10-29 12:02:06" itemprop="dateModified" datetime="2021-10-29T12:02:06+08:00">2021-10-29</time>
       </span>
 
   
@@ -1459,102 +1644,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/10/08/WSL%EF%BC%88Windows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%EF%BC%89%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%20Shell%20%E4%B8%BA%20Zsh/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Huiaei">
-      <meta itemprop="description" content="Huiaei 的小本本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Huiaei's Notebook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/08/WSL%EF%BC%88Windows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%EF%BC%89%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%20Shell%20%E4%B8%BA%20Zsh/" class="post-title-link" itemprop="url">WSL（Windows子系统Linux）设置默认 Shell 为 Zsh</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-10-08 20:35:04" itemprop="dateCreated datePublished" datetime="2020-10-08T20:35:04+08:00">2020-10-08</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 11:58:23" itemprop="dateModified" datetime="2021-10-29T11:58:23+08:00">2021-10-29</time>
-      </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>265</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li>安装 Zsh ，nano或者vim（选择你会使用的文本编辑器）</li>
-<li>使用 Linux 设置默认 Shell 为 Zsh 命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></li>
-<li>使用上述指令后，重新使用CMD或者PowerShell进入WSL时，会发现依旧为默认的Bash，此时需要编辑文件生效。使用你熟悉的文本编辑工具，vim或者nano，打开<code>~/bashrc</code>，向里面添加：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ $- == *i* ]] &amp;&amp; $(command -v zsh) || echo &quot;ZSH is not installed&quot;</span><br></pre></td></tr></table></figure>
-<p>之后保存即可。</p>
-<hr>
-<blockquote>
-<p>参考自：<a target="_blank" rel="noopener" href="https://limxw.com/posts/wsl-use-zsh/">WSL 中设置 zsh 为默认 SHELL</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1580,14 +1669,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">14k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
