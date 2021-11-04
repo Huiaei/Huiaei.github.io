@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -208,6 +208,104 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2021/11/04/Windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huiaei">
+      <meta itemprop="description" content="Huiaei 的小本本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huiaei's Notebook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/04/Windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">Windows远程桌面连接使用微软账户登录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-04 19:22:22 / 修改时间：19:24:31" itemprop="dateCreated datePublished" datetime="2021-11-04T19:22:22+08:00">2021-11-04</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>480</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Windows远程桌面连接使用微软账户登录"><a href="#Windows远程桌面连接使用微软账户登录" class="headerlink" title="Windows远程桌面连接使用微软账户登录"></a>Windows远程桌面连接使用微软账户登录</h1><ol>
+<li>打开<code>远程桌面连接</code>或者其他进行RDP连接的应用软件（以<code>远程桌面连接</code>为例）</li>
+<li><code>计算机</code>填写远程设备的IP地址或者域名（RDP默认端口为<code>3389</code>）</li>
+<li><code>用户名</code>填写微软账户的邮箱地址</li>
+<li>点击<code>连接</code></li>
+<li>使用微软账户的密码进行登录</li>
+</ol>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="微软账户的邮箱地址和密码输入正确但是无法登录"><a href="#微软账户的邮箱地址和密码输入正确但是无法登录" class="headerlink" title="微软账户的邮箱地址和密码输入正确但是无法登录"></a>微软账户的邮箱地址和密码输入正确但是无法登录</h3><ul>
+<li>请尝试将<code>计算机</code>填写成 <code>MicrosoftAccount\&#123;微软账户邮箱地址&#125;</code>的形式</li>
+</ul>
+<ul>
+<li><p>在远程连接目标设备上使用<code>运行</code>（<kbd>Windows</kbd>+<kbd>R</kbd>）执行下列任选一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runas /u:&#123;微软账户邮箱地址&#125; cmd.exe</span><br><span class="line">runas /u:MicrosoftAccount\&#123;微软账户邮箱地址&#125; cmd.exe</span><br></pre></td></tr></table></figure>
+<p>在弹出来的CLI（命令行）窗口按照提示输入微软账户密码</p>
+<p>命令的意思是使用<code>&#123;微软账户邮箱地址&#125;</code>的身份运行<code>cmd.exe</code></p>
+<p>此操作用意在于刷新微软账户在远程连接设备上的凭证缓存</p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/answers/questions/369584/windows-10-home-to-pro-upgrade-need-to-update-pers.html">Windows 10 RDP not working using Microsoft account (local accounts are working)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2021/10/29/%E8%8E%B7%E5%8F%96EA%20Desktop%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%8A%9E%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,10 +329,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-10-29 11:30:19 / 修改时间：12:06:48" itemprop="dateCreated datePublished" datetime="2021-10-29T11:30:19+08:00">2021-10-29</time>
+      <time title="创建时间：2021-10-29 11:30:19" itemprop="dateCreated datePublished" datetime="2021-10-29T11:30:19+08:00">2021-10-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
+      </span>
 
   
     <span class="post-meta-break"></span>
@@ -424,7 +528,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -520,7 +624,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -607,7 +711,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -720,7 +824,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -929,7 +1033,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -1078,7 +1182,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -1186,7 +1290,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -1279,7 +1383,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
+        <time title="修改时间：2021-11-04 19:24:31" itemprop="dateModified" datetime="2021-11-04T19:24:31+08:00">2021-11-04</time>
       </span>
 
   
@@ -1365,285 +1469,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/10/08/WSL%20%E5%B7%A5%E5%85%B7%20LxRunOffline%20%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Huiaei">
-      <meta itemprop="description" content="Huiaei 的小本本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Huiaei's Notebook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/08/WSL%20%E5%B7%A5%E5%85%B7%20LxRunOffline%20%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0/" class="post-title-link" itemprop="url">WSL 工具 LxRunOffline 相关参数</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-10-08 21:00:25" itemprop="dateCreated datePublished" datetime="2020-10-08T21:00:25+08:00">2020-10-08</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-29 12:06:48" itemprop="dateModified" datetime="2021-10-29T12:06:48+08:00">2021-10-29</time>
-      </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>949</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>基于版本3.5.0<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/DDoSolitary/LxRunOffline">https://github.com/DDoSolitary/LxRunOffline</a></p>
-</blockquote>
-<ul>
-<li>支持的操作有：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="right">简写参数</th>
-<th align="left">完整参数</th>
-<th align="left">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">l</td>
-<td align="left">list</td>
-<td align="left">列出所有已安装的发行版</td>
-</tr>
-<tr>
-<td align="right">gd</td>
-<td align="left">get-default</td>
-<td align="left">获取默认分发，由bash.exe使用</td>
-</tr>
-<tr>
-<td align="right">sd</td>
-<td align="left">set-default</td>
-<td align="left">设置默认分发，由bash.exe使用</td>
-</tr>
-<tr>
-<td align="right">i</td>
-<td align="left">install</td>
-<td align="left">安装新的发行版</td>
-</tr>
-<tr>
-<td align="right">ui</td>
-<td align="left">uninstall</td>
-<td align="left">卸载发行版</td>
-</tr>
-<tr>
-<td align="right">rg</td>
-<td align="left">register</td>
-<td align="left">注册现有的安装目录</td>
-</tr>
-<tr>
-<td align="right">ur</td>
-<td align="left">unregister</td>
-<td align="left">注销发行版，但不删除安装目录</td>
-</tr>
-<tr>
-<td align="right">m</td>
-<td align="left">move</td>
-<td align="left">将发行版移动到新目录</td>
-</tr>
-<tr>
-<td align="right">d</td>
-<td align="left">duplicate</td>
-<td align="left">在新目录中复制现有发行版</td>
-</tr>
-<tr>
-<td align="right">e</td>
-<td align="left">export</td>
-<td align="left">将发行版的文件系统导出到.tar.gz文件，该文件可以通过“install”命令导入</td>
-</tr>
-<tr>
-<td align="right">r</td>
-<td align="left">run</td>
-<td align="left">在发行版中运行命令</td>
-</tr>
-<tr>
-<td align="right">di</td>
-<td align="left">get-dir</td>
-<td align="left">获取发行版的安装目录</td>
-</tr>
-<tr>
-<td align="right">gv</td>
-<td align="left">get-version</td>
-<td align="left">获取发行版的文件系统版本</td>
-</tr>
-<tr>
-<td align="right">ge</td>
-<td align="left">get-env</td>
-<td align="left">获取发行版的默认环境变量</td>
-</tr>
-<tr>
-<td align="right">se</td>
-<td align="left">set-env</td>
-<td align="left">设置发行版的默认环境变量。</td>
-</tr>
-<tr>
-<td align="right">ae</td>
-<td align="left">add-env</td>
-<td align="left">添加到发行版的默认环境变量。</td>
-</tr>
-<tr>
-<td align="right">re</td>
-<td align="left">remove-env</td>
-<td align="left">从发行版的默认环境变量中删除。</td>
-</tr>
-<tr>
-<td align="right">gu</td>
-<td align="left">get-uid</td>
-<td align="left">获取发行版的默认用户的UID。</td>
-</tr>
-<tr>
-<td align="right">su</td>
-<td align="left">set-uid</td>
-<td align="left">设置发行版的默认用户的UID。</td>
-</tr>
-<tr>
-<td align="right">gk</td>
-<td align="left">get-kernelcmd</td>
-<td align="left">获取发行版的默认内核命令行。</td>
-</tr>
-<tr>
-<td align="right">sk</td>
-<td align="left">set-kernelcmd</td>
-<td align="left">设置发行版的默认内核命令行。</td>
-</tr>
-<tr>
-<td align="right">gf</td>
-<td align="left">get-flags</td>
-<td align="left">获取一些发行版的标志。有关详细信息，请参见<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags">url</a></td>
-</tr>
-<tr>
-<td align="right">sf</td>
-<td align="left">set-flags</td>
-<td align="left">设置发行版的一些标志。有关详细信息，请参见<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags">url</a></td>
-</tr>
-<tr>
-<td align="right">s</td>
-<td align="left">shortcut</td>
-<td align="left">创建启动发布的快捷方式。</td>
-</tr>
-<tr>
-<td align="right">ec</td>
-<td align="left">export-config</td>
-<td align="left">将发行版的配置导出到XML文件。</td>
-</tr>
-<tr>
-<td align="right">ic</td>
-<td align="left">import-config</td>
-<td align="left">从XML文件导入发行版的配置</td>
-</tr>
-<tr>
-<td align="right">sm</td>
-<td align="left">summary</td>
-<td align="left">获取发行版的基本信息</td>
-</tr>
-<tr>
-<td align="right"></td>
-<td align="left">version</td>
-<td align="left">获取有关LxRunOffline版本信息</td>
-</tr>
-</tbody></table>
-<ul>
-<li>附属参数：(可能不完整)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th align="left">参数解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-n</td>
-<td align="left">发行版的名称</td>
-</tr>
-<tr>
-<td>-d</td>
-<td align="left">发行版安装目录</td>
-</tr>
-<tr>
-<td>-f</td>
-<td align="left">包含要安装的发行版的根文件系统的tar文件。如果存在一个扩展名为.xml的相同名称的文件，并且没有指定“-c”，则该文件将作为配置文件导入。</td>
-</tr>
-<tr>
-<td>-r</td>
-<td align="left">要提取的tar文件中的目录，可选选项</td>
-</tr>
-<tr>
-<td>-c</td>
-<td align="left">要使用的配置文件，可选选项</td>
-</tr>
-<tr>
-<td>-v</td>
-<td align="left">要使用的文件系统版本，如果未指定，则为最新可用版本。</td>
-</tr>
-<tr>
-<td>-s</td>
-<td align="left">在桌面上创建快捷方式</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1669,7 +1494,7 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">15k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">

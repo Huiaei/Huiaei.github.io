@@ -585,6 +585,30 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Windows远程桌面连接使用微软账户登录</title>
+    <url>/2021/11/04/Windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="Windows远程桌面连接使用微软账户登录"><a href="#Windows远程桌面连接使用微软账户登录" class="headerlink" title="Windows远程桌面连接使用微软账户登录"></a>Windows远程桌面连接使用微软账户登录</h1><ol>
+<li>打开<code>远程桌面连接</code>或者其他进行RDP连接的应用软件（以<code>远程桌面连接</code>为例）</li>
+<li><code>计算机</code>填写远程设备的IP地址或者域名（RDP默认端口为<code>3389</code>）</li>
+<li><code>用户名</code>填写微软账户的邮箱地址</li>
+<li>点击<code>连接</code></li>
+<li>使用微软账户的密码进行登录</li>
+</ol>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="微软账户的邮箱地址和密码输入正确但是无法登录"><a href="#微软账户的邮箱地址和密码输入正确但是无法登录" class="headerlink" title="微软账户的邮箱地址和密码输入正确但是无法登录"></a>微软账户的邮箱地址和密码输入正确但是无法登录</h3><ul>
+<li>请尝试将<code>计算机</code>填写成 <code>MicrosoftAccount\&#123;微软账户邮箱地址&#125;</code>的形式</li>
+</ul>
+<ul>
+<li><p>在远程连接目标设备上使用<code>运行</code>（<kbd>Windows</kbd>+<kbd>R</kbd>）执行下列任选一行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">runas /u:&#123;微软账户邮箱地址&#125; cmd.exe</span><br><span class="line">runas /u:MicrosoftAccount\&#123;微软账户邮箱地址&#125; cmd.exe</span><br></pre></td></tr></table></figure>
+<p>在弹出来的CLI（命令行）窗口按照提示输入微软账户密码</p>
+<p>命令的意思是使用<code>&#123;微软账户邮箱地址&#125;</code>的身份运行<code>cmd.exe</code></p>
+<p>此操作用意在于刷新微软账户在远程连接设备上的凭证缓存</p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.microsoft.com/en-us/answers/questions/369584/windows-10-home-to-pro-upgrade-need-to-update-pers.html">Windows 10 RDP not working using Microsoft account (local accounts are working)</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>npm镜像</title>
     <url>/2021/01/22/npm%E9%95%9C%E5%83%8F/</url>
     <content><![CDATA[<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><ol>
