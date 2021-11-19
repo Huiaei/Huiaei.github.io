@@ -26,7 +26,7 @@
 <meta name="description" content="Huiaei 的小本本">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Huiaei&#39;s Notebook">
-<meta property="og:url" content="http://huiaei.cf/archives/2020/index.html">
+<meta property="og:url" content="http://huiaei.cf/page/3/index.html">
 <meta property="og:site_name" content="Huiaei&#39;s Notebook">
 <meta property="og:description" content="Huiaei 的小本本">
 <meta property="og:locale" content="zh_CN">
@@ -35,14 +35,14 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://huiaei.cf/archives/2020/">
+<link rel="canonical" href="http://huiaei.cf/page/3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2020/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | Huiaei's Notebook</title>
+<title>Huiaei's Notebook</title>
   
 
 
@@ -198,231 +198,102 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner index posts-expand">
+
+    
 
 
+<div class="post-block">
   
   
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huiaei.cf/2020/01/13/Gridea%20%E6%A3%80%E6%9F%A5%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huiaei">
+      <meta itemprop="description" content="Huiaei 的小本本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huiaei's Notebook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/13/Gridea%20%E6%A3%80%E6%9F%A5%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E7%9A%84%E4%B8%80%E4%B8%AA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Gridea 检查远程连接失败的一个解决方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-13 23:25:00" itemprop="dateCreated datePublished" datetime="2020-01-13T23:25:00+08:00">2020-01-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-19 16:32:59" itemprop="dateModified" datetime="2021-11-19T16:32:59+08:00">2021-11-19</time>
+      </span>
+
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 21 篇日志。 继续努力。</span>
-      </div>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>409</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我使用的是 Windows 版本，Gridea 版本是 0.9.1 。<br>当时键入了配置完成；保存；检查远程连接。发现提示 <strong>远程连接失败，请检查仓库、用户名和 Token 设置</strong>，在其<strong>开发者工具</strong>中提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: &quot;fatal: No such remote &#x27;origin&#x27;↵&quot;</span><br><span class="line">success: false</span><br></pre></td></tr></table></figure>
+<p>之后我向 Gridea 提出 issue 。 <a target="_blank" rel="noopener" href="https://github.com/yz0812">yz0812</a> 提示了 Gridea 其保存目录的 .git/config 文件中 url 格式应为 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://username:token@github.com/**.github.io.git</span><br></pre></td></tr></table></figure>
+<p>后，我打开所在文件，并没有发现有类似格式。</p>
+<hr>
+<p>也受其提示，突发奇想。先将 Page 项目使用 git 给 clone 下来；完成后，打开项目文件夹，打开其 .git/config 文件，将包括上面 url 格式的那一段，复制到 Gridea 的 .git/config 中，保存文件。之后再检查连接，成功。</p>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-12-05T11:19:27+08:00"
-              content="2020-12-05">
-          12-05
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/05/Python3%20%E8%AF%AD%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Python3 语法笔记</span>
-          </a>
-      </div>
-
+    <footer class="post-footer">
+        <div class="post-eof"></div>
       
-    </header>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-21T14:50:28+08:00"
-              content="2020-11-21">
-          11-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/21/Mklink%20%E5%91%BD%E4%BB%A4%EF%BC%88%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5%E3%80%81%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5%E3%80%81%E7%A1%AC%E9%93%BE%E6%8E%A5%E3%80%81%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89/" itemprop="url">
-            <span itemprop="name">Mklink 命令（符号链接、目录链接、硬链接、快捷方式的区别）</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-13T11:47:07+08:00"
-              content="2020-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/13/Steam%20%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E9%A2%86%E5%8F%96%E6%B8%B8%E6%88%8F/" itemprop="url">
-            <span itemprop="name">Steam 在浏览器上使用脚本领取游戏</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-05T19:11:37+08:00"
-              content="2020-11-05">
-          11-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/05/pacman%20GPG%20key-rings%E9%92%A5%E5%8C%99%E4%B8%B2%20%E7%BC%BA%E5%B0%91%E7%AD%89%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">pacman GPG key-rings钥匙串 缺少等问题</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-27T21:28:30+08:00"
-              content="2020-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/27/Arch&Manjaro%EF%BC%88pacman%EF%BC%89%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/" itemprop="url">
-            <span itemprop="name">Arch/Manjaro（pacman）配置国内源</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-08T21:00:25+08:00"
-              content="2020-10-08">
-          10-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/08/WSL%20%E5%B7%A5%E5%85%B7%20LxRunOffline%20%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0/" itemprop="url">
-            <span itemprop="name">WSL 工具 LxRunOffline 相关参数</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-10-08T20:35:04+08:00"
-              content="2020-10-08">
-          10-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/08/WSL%EF%BC%88Windows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%EF%BC%89%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%20Shell%20%E4%B8%BA%20Zsh/" itemprop="url">
-            <span itemprop="name">WSL（Windows子系统Linux）设置默认 Shell 为 Zsh</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-07-14T16:56:32+08:00"
-              content="2020-07-14">
-          07-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/14/%E7%94%B5%E4%BF%A1%E7%BD%91%E5%85%B3HG6201T%E8%8E%B7%E5%8F%96%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%88%B7/" itemprop="url">
-            <span itemprop="name">电信网关HG6201T获取超级账户</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-06-28T18:34:57+08:00"
-              content="2020-06-28">
-          06-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/28/Onedrive%E8%AE%BE%E7%BD%AE%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%BC%A0%E8%BE%93/" itemprop="url">
-            <span itemprop="name">Onedrive设置多线程传输</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-06-10T07:44:50+08:00"
-              content="2020-06-10">
-          06-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/09/CCleaner%E4%B8%93%E4%B8%9A%E7%89%88%E6%96%AD%E7%BD%91%E6%BF%80%E6%B4%BB/" itemprop="url">
-            <span itemprop="name">CCleaner专业版断网激活</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </div>

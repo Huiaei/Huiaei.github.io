@@ -187,6 +187,86 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Motorola Edge s Pro 刷机折腾记录</title>
+    <url>/2021/11/19/Motorola%20Edge%20s%20Pro%20%E5%88%B7%E6%9C%BA%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="Motorola-Edge-s-Pro-刷机折腾记录"><a href="#Motorola-Edge-s-Pro-刷机折腾记录" class="headerlink" title="Motorola Edge s Pro 刷机折腾记录"></a>Motorola Edge s Pro 刷机折腾记录</h1><p>此文非教程，只记录本人的折腾之旅，只提供思路，不要照抄。<br>请保证你有相应的能力水平。</p>
+<h2 id="本人手机简述"><a href="#本人手机简述" class="headerlink" title="本人手机简述"></a>本人手机简述</h2><p>Motorola Edge s Pro</p>
+<ul>
+<li>SOC ：高通骁龙870</li>
+<li>内存 ：8GB</li>
+<li>储存 ：256GB</li>
+<li>型号 ：XT2153-1</li>
+<li>代号 ：pstart</li>
+</ul>
+<h2 id="解锁BootLoader"><a href="#解锁BootLoader" class="headerlink" title="解锁BootLoader"></a>解锁BootLoader</h2><h3 id="需要工具："><a href="#需要工具：" class="headerlink" title="需要工具："></a>需要工具：</h3><ul>
+<li><a href="https://bbs.ixmoe.com/t/topic/17646">Tiny Fastboot Script</a></li>
+<li><a href="https://mirrors.lolinet.com/software/windows/Motorola/Drivers/">Motorola USB Driver</a></li>
+<li>Motorola用户账号（用于获取解锁码）</li>
+<li>还算过关的英语水平或者会使用翻译工具</li>
+</ul>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ol>
+<li>打开“开发者选项”<ol>
+<li>打开手机系统<code>设置</code></li>
+<li>点击<code>关于手机</code></li>
+<li>连续点击<code>版本号</code>直到提示进入了<code>开发者模式</code></li>
+</ol>
+</li>
+<li>打开“OEM解锁”<ol>
+<li>打开手机系统<code>设置</code></li>
+<li>点击<code>系统</code></li>
+<li>点击<code>高级</code></li>
+<li>点击<code>开发者选项</code></li>
+<li>找到<code>OEM解锁</code>打开开关</li>
+</ol>
+</li>
+<li>重启到“Fastboot”<ol>
+<li>长按<code>电源键</code></li>
+<li>点击<code>重启</code></li>
+<li>点击完后立即按住<code>音量减键</code></li>
+<li>进入<code>Fastboot</code></li>
+<li>解压安装<code>Motorola USB Driver</code></li>
+<li>解压使用<code>Tiny Fastboot Script</code>,请先阅读<code>请先阅读我</code>文本，按照提示指引使用。<ol>
+<li>双击<code>flash.bat</code></li>
+<li>使用数据线将手机和电脑连接</li>
+<li>按照提示输入数字并回车，例如<code>[8] 解锁设备的 Bootloader</code>,输入<code>8</code>回车</li>
+<li>获取解锁请求码<ol>
+<li>按照提示选择<code>[3] 获取解锁请求码</code></li>
+<li>进入后会给予一串代码，复制下来（命令行中使用鼠标左键选中，然后单机鼠标右键即可复制出来）</li>
+<li>前往网页<a href="https://motorola-global-portal.custhelp.com/app/standalone/bootloader/unlock-your-device-b">unlock-your-device</a>,或者按照提示选择<code>[1] 打开 Motorola 解锁官网</code></li>
+<li>登录<code>Motorola账号</code></li>
+<li>将代码贴进文本框查询是否能解锁，通过即可继续往下，同意协议后即可获取解锁码，解锁码会发送到<code>Motorola账户</code>的注册邮箱中。</li>
+</ol>
+</li>
+<li>复制解锁码，按照提示返回，然后选择<code>[2] 解锁普通 Motorola 设备的 Bootloader（需要解锁码）</code>，按照要求复制进去即可（复制好后点击命令行窗口然后鼠标右键即可复制）</li>
+<li>可能会弹出警告，请自行阅读并理解风险后自行决定。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="刷入其他的发行版本或者第三方ROM"><a href="#刷入其他的发行版本或者第三方ROM" class="headerlink" title="刷入其他的发行版本或者第三方ROM"></a>刷入其他的发行版本或者第三方ROM</h2><p>同样使用<a href="https://bbs.ixmoe.com/t/topic/17646">Tiny Fastboot Script</a>工具，按照提示即可。</p>
+<p>推荐几个网页：<br><a href="https://mirrors.lolinet.com/firmware/motorola/pstar/">由lolinet.com提供的手机系统镜像</a><br><a href="https://bbs.ixmoe.com/t/topic/22491">Motorola 软件通道介绍，如何找到合适的官方固件</a><br><a href="https://bbs.ixmoe.com/">汐梦社区</a></p>
+<h2 id="刷入Magisk-Root"><a href="#刷入Magisk-Root" class="headerlink" title="刷入Magisk Root"></a>刷入Magisk Root</h2><ol>
+<li>下载对应的最新的官方固件</li>
+<li>解压提取<code>boot.img</code></li>
+<li>传入手机中</li>
+<li>手机安装<code>Magisk Manager</code></li>
+<li>选择安装修补</li>
+<li>选择传入手机的<code>boot.img</code></li>
+<li>修补完成后，查看日志，找到修补过的boot.img文件位置</li>
+<li>将修补的<code>boot.img</code>传到电脑使用<code>Tiny Fastboot Script</code>刷入<code>Boot</code>分区</li>
+<li>重启手机</li>
+</ol>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><ul>
+<li><a href="https://bbs.ixmoe.com/">汐梦社区</a></li>
+<li><a href="https://mirrors.lolinet.com/">lolinet.com</a></li>
+<li><a href="https://bbs.ixmoe.com/u/chenchen">chenchen</a>的<a href="https://bbs.ixmoe.com/t/topic/17646">Tiny Fastboot Script</a></li>
+<li><a href="https://github.com/topjohnwu/Magisk">Magisk</a></li>
+<li><a href="https://forum.xda-developers.com/t/guide-root-motorola-with-magisk-unlocked-bootloader-non-twrp-method.4222583/">[Guide] Root Motorola with Magisk (UnLocked Bootloader)(Non-TWRP method)</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Onedrive设置多线程传输</title>
     <url>/2020/06/28/Onedrive%E8%AE%BE%E7%BD%AE%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%BC%A0%E8%BE%93/</url>
     <content><![CDATA[<p>修改文件：<br>“%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini”<br>向第一行加入：<br>numberOfConcurrentUploads=3</p>
