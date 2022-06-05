@@ -14,7 +14,7 @@ npm --registry [镜像服务url] install [安装目标]
 npm config set registry [镜像服务url]
 ```
 
-### 常用大陆镜像服务url
+### 常用大陆镜像服务URL
 
 > 欢迎补充
 

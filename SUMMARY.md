@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Arch/Manjaro（pacman）配置国内源](README.md)
+* [Arch/Manjaro（pacman）配置国内镜像源](README.md)
 * [CCleaner专业版断网激活](ccleaner-zhuan-ye-ban-duan-wang-ji-huo.md)
 * [Git 命令使用/取消代理](git-ming-ling-shi-yong-qu-xiao-dai-li.md)
 * [Docker容器中无法运行二进制文件并出现：/bin/sh: xxx not found](docker-rong-qi-zhong-wu-fa-yun-hang-er-jin-zhi-wen-jian-bing-chu-xian-binsh-xxx-not-found.md)
@@ -14,7 +14,7 @@
 * [WSL 工具 LxRunOffline 相关参数](wsl-gong-ju-lxrunoffline-xiang-guan-can-shu.md)
 * [使用 SMR 技术的硬盘型号列表](shi-yong-smr-ji-shu-de-ying-pan-xing-hao-lie-biao.md)
 * [站长平台](zhan-chang-ping-tai.md)
-* [同方，蓝天，神舟型号命名规则](tong-fang-lan-tian-shen-zhou-xing-hao-ming-ming-gui-ze.md)
+* [同方、蓝天、神舟型号命名规则](tong-fang-lan-tian-shen-zhou-xing-hao-ming-ming-gui-ze.md)
 * [电信网关HG6201T获取超级账户](dian-xin-wang-guan-hg6201t-huo-qu-chao-ji-zhang-hu.md)
 * [获取EA Desktop客户端离线安装包的办法](huo-qu-ea-desktop-ke-hu-duan-li-xian-an-zhuang-bao-de-ban-fa.md)
 * [WSL（Windows子系统Linux）设置默认 Shell 为 Zsh](wslwindows-zi-xi-tong-linux-she-zhi-mo-ren-shell-wei-zsh.md)
