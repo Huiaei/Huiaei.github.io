@@ -1,25 +1,25 @@
-# Arch/Manjaro（pacman）配置国内源
+# 关于
 
-1. 更改源
+欢迎你！这是一个笔记本项目，用途主要是记录鄙人平常遇上的问题的解决方式。
 
-* 使用`pacman-mirros`更改镜像软件库所在国家 `sudo pacman-mirrors -i -c China -m rank`
-* 或者使用nano或vim打开`/etc/pacman.d/mirrorlist` 添加源服务器链接并保存，例如，清华源 `Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch`
+**请善用搜索功能找到相关的内容**。
 
-1. 使用命令`pacman -Syy`强制刷新软件库缓存
-2. 可选选择 安装`archlinuxcn` 1. 打开`/etc/pacman.conf` 2. 在末尾添加
+解决方式可能来源网络上，经过鄙人的收集并处理成我喜欢的方式，也有可能是鄙人瞎折腾出来的方法，但这些方法不能保证对你的问题同样有效，只作为参考。
 
-```
-[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-```
+如果你发现方法失效了，欢迎你到GITHUB提交ISSUES。
 
-服务器可选以下，只需替换`Server =`之后的链接（搜集不全，如有缺失，欢迎补充）
+如果你找到了新方法并且想更新笔记，也欢迎你到GITHUB提交合并。
 
-| 名字   | 链接                                                  |
-| ---- | --------------------------------------------------- |
-| 中科大  | https://mirrors.ustc.edu.cn/archlinuxcn/$arch       |
-| 网易   | http://mirrors.163.com/archlinux-cn/$arch           |
-| 腾讯云  | https://mirrors.cloud.tencent.com/archlinuxcn/$arch |
-| ---- |                                                     |
+### 文章来源和许可
 
-推荐参考资料：[archwiki](https://wiki.archlinux.org)
+来源于网络上的文章，按照鄙人习惯会将来源标注在文章的末端，但如果遇上借鉴太多的情况，在解决问题的过程中可能记不住那么多链接，这些链接将不会标注，在此表示抱歉。
+
+如果你想引用本笔记本内容，欢迎引用。除商用外，不做任何限制，完全自由。该笔记本的目的就是为了帮助自己和其他遇上相同问题的人，使其快速走出问题的困扰。
+
+### 感谢与其他
+
+非常感谢GITHUB和GITBOOK提供的服务。
+
+本项目使用Onedrive作为图床的根基，使用vercel平台搭建onemanager进行调用，也非常感谢这些项目和平台。
+
+之前曾经采用GRIDEA和HEXO搭建静态博客的方式公开这个笔记本，但是一些原因改用了。
