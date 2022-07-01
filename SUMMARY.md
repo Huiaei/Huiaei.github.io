@@ -2,7 +2,7 @@
 
 * [关于](README.md)
 * [学习](xue-xi/README.md)
-  * [感知押题账号密码](xue-xi/gan-zhi-ya-ti-zhang-hao-mi-ma.md)
+  * [感知押题](xue-xi/gan-zhi-ya-ti.md)
   * [Python3 语法笔记](python3-yu-fa-bi-ji.md)
 * [电脑 / 手机 / 硬件](dian-nao-shou-ji-ying-jian/README.md)
   * [使用 SMR 技术的硬盘型号列表](shi-yong-smr-ji-shu-de-ying-pan-xing-hao-lie-biao.md)
@@ -22,7 +22,7 @@
 * [Linux / WSL](linux-wsl/README.md)
   * [WSL（Windows子系统Linux）设置默认 Shell 为 Zsh](wslwindows-zi-xi-tong-linux-she-zhi-mo-ren-shell-wei-zsh.md)
   * [pacman GPG key-rings钥匙串 缺少等问题](pacman-gpg-keyrings-yue-chi-chuan-que-shao-deng-wen-ti.md)
-  * [Arch/Manjaro（pacman）配置国内镜像源](README.md)
+  * [Arch/Manjaro（pacman）配置国内镜像源](<README (1).md>)
 * [游戏相关](you-xi-xiang-guan/README.md)
   * [Steam平台](you-xi-xiang-guan/steam-ping-tai/README.md)
     * [Steam 在浏览器上使用脚本领取游戏](steam-zai-liu-lan-qi-shang-shi-yong-jiao-ben-ling-qu-you-xi.md)
