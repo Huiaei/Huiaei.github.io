@@ -2,6 +2,10 @@
 
 * [关于](README.md)
 * [学习](xue-xi/README.md)
+  * [RustLang](xue-xi/rustlang/README.md)
+    * [关于](xue-xi/rustlang/guan-yu.md)
+    * [一. 安装](xue-xi/rustlang/yi-.-an-zhuang.md)
+    * [Page 1](xue-xi/rustlang/page-1.md)
   * [感知押题](xue-xi/gan-zhi-ya-ti.md)
   * [Python3 语法笔记](python3-yu-fa-bi-ji.md)
 * [电脑 / 手机 / 硬件](dian-nao-shou-ji-ying-jian/README.md)
