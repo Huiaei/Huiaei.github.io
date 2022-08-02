@@ -35,3 +35,8 @@
     * [Origin （EA游戏平台）主程序离线安装包下载连接](origin-ea-you-xi-ping-tai-zhu-cheng-xu-li-xian-an-zhuang-bao-xia-zai-lian-jie.md)
 * [其他](qi-ta/README.md)
   * [站长平台](zhan-chang-ping-tai.md)
+  * [Macintosh / Hackintosh](qi-ta/macintosh-hackintosh/README.md)
+    * [联想R720](qi-ta/macintosh-hackintosh/lian-xiang-r720/README.md)
+      * [曾经的项目](qi-ta/macintosh-hackintosh/lian-xiang-r720/zeng-jing-de-xiang-mu.md)
+      * [R720-15IKBN MSR 0xE2 CFG Lock 解锁](qi-ta/macintosh-hackintosh/lian-xiang-r720/r72015ikbn-msr-0xe2-cfg-lock-jie-suo.md)
+      * [Page 2](qi-ta/macintosh-hackintosh/lian-xiang-r720/page-2.md)
