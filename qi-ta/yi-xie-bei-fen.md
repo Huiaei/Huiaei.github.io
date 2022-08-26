@@ -44,7 +44,7 @@
 
 
 
-## Pixelify-Google-Photos
+### Pixelify-Google-Photos
 
 {% embed url="https://github.com/BaltiApps/Pixelify-Google-Photos" %}
 
