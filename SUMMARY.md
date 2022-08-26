@@ -35,6 +35,7 @@
     * [Origin （EA游戏平台）主程序离线安装包下载连接](origin-ea-you-xi-ping-tai-zhu-cheng-xu-li-xian-an-zhuang-bao-xia-zai-lian-jie.md)
 * [其他](qi-ta/README.md)
   * [站长平台](zhan-chang-ping-tai.md)
+  * [一些备份](qi-ta/yi-xie-bei-fen.md)
   * [Macintosh / Hackintosh](qi-ta/macintosh-hackintosh/README.md)
     * [联想R720](qi-ta/macintosh-hackintosh/lian-xiang-r720/README.md)
       * [曾经的项目](qi-ta/macintosh-hackintosh/lian-xiang-r720/zeng-jing-de-xiang-mu.md)
