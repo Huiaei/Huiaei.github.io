@@ -1,13 +1,13 @@
 
 * [关于](README)
 
-* [Linux和WSL](Linux和WSL)
+* [Linux和WSL](#/Linux和WSL)
 
-  * [Arch-Manjaro（pacman）配置国内源](Linux和WSL/2023年2月13日15:37:35)
-  * [npm镜像](Linux和WSL/2023年2月13日15:39:24)
-  * [pacman GPG key-rings钥匙串缺少等问题](Linux和WSL/2023年2月13日15:40:04)
-  * [WSL（Windows子系统Linux）设置默认 Shell 为 Zsh](Linux和WSL/2023年2月13日15:40:51)
-  * [WSL-工具-LxRunOffline相关参数](Linux和WSL/2023年2月13日15:41:17)
+  * [Arch-Manjaro（pacman）配置国内源](#/Linux和WSL/2023年2月13日15:37:35)
+  * [npm镜像](#/Linux和WSL/2023年2月13日15:39:24)
+  * [pacman GPG key-rings钥匙串缺少等问题](#/Linux和WSL/2023年2月13日15:40:04)
+  * [WSL（Windows子系统Linux）设置默认 Shell 为 Zsh](#/Linux和WSL/2023年2月13日15:40:51)
+  * [WSL-工具-LxRunOffline相关参数](#/Linux和WSL/2023年2月13日15:41:17)
 
 * [笔记](#/笔记)
 
