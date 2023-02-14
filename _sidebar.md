@@ -1,5 +1,5 @@
 
-* [关于](#/README)
+* [关于](README)
 
 * [Linux和WSL](#/Linux和WSL)
 
