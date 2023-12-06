@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Gridea 检查远程连接失败的一个解决方法 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="我使用的是 Windows 版本，Gridea 版本是 0.9.1 。 当时键入了配置完成；保存；检查远程连接。发现提示 远程连接失败，请检查仓库、用户名和 Token 设置，在其开发者工具中提示
+    message: &quot;fa..." />
+    <meta name="keywords" content="软件使用,解决方案" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Gridea 检查远程连接失败的一个解决方法</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <p>我使用的是 Windows 版本，Gridea 版本是 0.9.1 。 当时键入了配置完成；保存；检查远程连接。发现提示 <strong>远程连接失败，请检查仓库、用户名和 Token 设置</strong>，在其<strong>开发者工具</strong>中提示</p>
+<pre><code>    message: &quot;fatal: No such remote 'origin'↵&quot;
+    success: false
+</code></pre>
+<p>之后我向 Gridea 提出 issue 。 <a href="https://github.com/yz0812">yz0812</a> 提示了 Gridea 其保存目录的 .git/config 文件中 url 格式应为</p>
+<pre><code>https://username:token@github.com/**.github.io.git
+</code></pre>
+<p>后，我打开所在文件，并没有发现有类似格式。</p>
+<hr>
+<p>也受其提示，突发奇想。先将 Page 项目使用 git 给 clone 下来；完成后，打开项目文件夹，打开其 .git/config 文件，将包括上面 url 格式的那一段，复制到 Gridea 的 .git/config 中，保存文件。之后再检查连接，成功。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huiaei.github.io/tag/NOl06SJK_/" class="tag">
+                    软件使用
+                  </a>
+                
+                  <a href="https://huiaei.github.io/tag/C62fikBYKx/" class="tag">
+                    解决方案
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://huiaei.github.io/post/dian-xin-wang-guan-hg6201t-huo-qu-chao-ji-zhang-hu/">
+                  <h3 class="post-title">
+                    电信网关HG6201T获取超级账户
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

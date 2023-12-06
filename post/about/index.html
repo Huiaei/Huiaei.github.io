@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>关于 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="欢迎你！这是一个笔记本项目，初衷是记录本人在平常遇上的问题、解决方式和步骤，希望能对你有所帮助。
+请善用搜索功能找到相关的内容。
+解决方式有些来源网络上，经过收集信息并处理成我喜欢或是理解的方式，也有些是瞎折腾出来的方法。这些方法不能保证对..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">关于</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <p>欢迎你！这是一个笔记本项目，初衷是记录本人在平常遇上的问题、解决方式和步骤，希望能对你有所帮助。</p>
+<p><strong>请善用搜索功能找到相关的内容</strong>。</p>
+<p>解决方式有些来源网络上，经过收集信息并处理成我喜欢或是理解的方式，也有些是瞎折腾出来的方法。这些方法不能保证对你的问题同样有效，只作为参考，请根据你的问题实际来解决。</p>
+<ul>
+<li>如果你发现方法失效了，欢迎你到GITHUB提交ISSUES来提醒我。</li>
+<li>如果你找到了新方法并且想更新笔记，也欢迎你到GITHUB提交合并，帮助下一个可能遇上相同问题的朋友。</li>
+</ul>
+<h3 id="文章来源和许可">文章来源和许可</h3>
+<p>如果来源于网络上的文章，按照个人习惯会将来源标注在文章的末端。但如果遇上借鉴太多的情况，在解决问题的过程中可能记不住那么多链接，这些链接将会被遗忘标注，在此表示抱歉。</p>
+<p>PS：文章基本都是解决之后的总结，解决过程中不会去记录，相关的截图大部分也是复现后截取。</p>
+<p>该笔记本的目的就是为了帮助自己和其他遇上相同问题的人，使其快速走出问题的困扰。如果你想引用本笔记本内容，欢迎引用。除商用外，不做任何限制，完全自由。</p>
+<h3 id="感谢与其他">感谢与其他</h3>
+<ul>
+<li><strong>Github</strong>：感谢提供的Pages功能和项目托管。</li>
+<li><strong>Gridea</strong>：使用此工具构建网页。</li>
+<li><strong>Onedrive</strong>：感谢提供的储存服务。</li>
+<li><strong>Alist</strong>：调用着Onedrive的储存，为此提供图床。</li>
+<li><strong>eu.org</strong>：感谢此组织提供的免费域名。</li>
+<li><strong>各位大佬和网络上的无私奉献者</strong>：各位大佬的各种解决方案有很大的帮助。</li>
+</ul>
+<p>曾经使用过的</p>
+<ul>
+<li>Onemanager：曾经用做图床。</li>
+<li>Vercel：曾经在此平台上搭建Onemanager。</li>
+<li>Hexo：曾经使用过此生成器。</li>
+<li>Gitbook：曾经使用过此平台。</li>
+<li>Docsify：曾经使用过此生成器。</li>
+<li>Freenom：曾经使用过免费的域名。</li>
+<li>还有一些想不起来的...</li>
+</ul>
+
+            </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Onedrive设置多线程传输 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="修改文件： &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot; 向第一行加入： numberOfConcurrentUploads=3
+
+PS..." />
+    <meta name="keywords" content="软件使用" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Onedrive设置多线程传输</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <p>修改文件： &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot; 向第一行加入： numberOfConcurrentUploads=3</p>
+<blockquote>
+<p>PS：数值项即为线程数，最小值为1，最大值为3，根据实际需要选择即可</p>
+</blockquote>
+<p>可通过<code>Windows</code>+<code>R</code>运行，或cmd里运行下面直接打开修改： notepad &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot;</p>
+<hr>
+<blockquote>
+<p><a href="https://blog.tcpsoft.app/2020/03/let-onedrive-fly-scientifically/">https://blog.tcpsoft.app/2020/03/let-onedrive-fly-scientifically/</a></p>
+</blockquote>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huiaei.github.io/tag/NOl06SJK_/" class="tag">
+                    软件使用
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://huiaei.github.io/post/mklink-ming-ling-fu-hao-lian-jie-mu-lu-lian-jie-ying-lian-jie-kuai-jie-fang-shi-de-qu-bie/">
+                  <h3 class="post-title">
+                    Mklink 命令（符号链接、目录链接、硬链接、快捷方式的区别）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

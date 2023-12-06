@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://huiaei.github.io</id>
+    <title>Huiaei&apos;s Notebook</title>
+    <updated>2023-12-06T11:35:35.183Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://huiaei.github.io"/>
+    <link rel="self" href="https://huiaei.github.io/atom.xml"/>
+    <subtitle>用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅</subtitle>
+    <logo>https://huiaei.github.io/images/avatar.png</logo>
+    <icon>https://huiaei.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Huiaei&apos;s Notebook</rights>
+    <entry>
+        <title type="html"><![CDATA[获取EA Desktop客户端离线安装包的办法]]></title>
+        <id>https://huiaei.github.io/post/huo-qu-ea-desktop-ke-hu-duan-chi-xian-an-zhuang-bao-de-ban-fa/</id>
+        <link href="https://huiaei.github.io/post/huo-qu-ea-desktop-ke-hu-duan-chi-xian-an-zhuang-bao-de-ban-fa/">
+        </link>
+        <updated>2023-12-06T11:32:30.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="方法">方法</h2>
+<ol>
+<li>
+<p>首先获取最新的在线安装包 <a href="https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EADesktopInstaller.exe">EA Desktop Installer</a></p>
+</li>
+<li>
+<p>使用压缩工具打开<code>EAappInstaller.exe</code>，得到类似下方的目录</p>
+<pre><code>0
+u0
+u1
+u2
+</code></pre>
+</li>
+<li>
+<p>使用文本编辑工具打开第一个文件： <code>0</code></p>
+</li>
+<li>
+<p>使用搜索功能或者翻阅的方式找到类似于下方的链接（使用换行后大约在整体的中间部分）</p>
+<p><code>https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAapp-12.0.150.5030-639.msi</code></p>
+</li>
+<li>
+<p>使用下载工具下载该链接即可。</p>
+</li>
+<li>
+<p>请注意有些依赖文件，如果没有是需要下载安装的，推荐直接下载安装一遍，下载地址在发现此链接位置的附近。</p>
+<p>提供一个当前<code>12.0.150.5030</code>版本的所有下载列表，顺便说一句，下载的<code>EAapp.msi</code>安装时是可以选安装位置的。</p>
+<p>依赖安装完记得<strong>重启计算机</strong>。</p>
+<blockquote>
+<p>vcredist10.x86.exe : https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-10.0.40219.x86.exe</p>
+</blockquote>
+<blockquote>
+<p>vcredist14.x86.exe ：https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x86.exe</p>
+</blockquote>
+<blockquote>
+<p>vcredist14.x64.exe : https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/vc_redist-14.28.29325.x64.exe</p>
+</blockquote>
+<blockquote>
+<p>EAapp.msi : https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAapp-12.0.150.5030-639.msi</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="本人使用的工具">本人使用的工具</h2>
+<ul>
+<li>压缩工具：<a href="https://www.7-zip.org/">7zip</a></li>
+<li>文本编辑工具：<a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li>下载工具推荐使用多线程下载工具</li>
+</ul>
+<h2 id="其他的说明">其他的说明</h2>
+<blockquote>
+<p>Q：什么时候发现的？</p>
+<p>A：在2021年10月28日23时左右（UTC+8），方法可能具有时效性。</p>
+</blockquote>
+<blockquote>
+<p>Q：第一步的下载的是<code>EA Desktop Installer</code>，为什么第二步是<code>EAappInstaller.exe</code></p>
+<p>A：EA的下载链接跳转到EAappInstaller.exe，现在EA Desktop还处于开放测试阶段，不清楚之后会不会修改。</p>
+</blockquote>
+<blockquote>
+<p>Q：为什么我找到的离线完整包是<code>EADesktop-xx.x.xxx.xxxx</code>结尾的？</p>
+<p>A：早期的链接的确是这个结尾，后面EA可能修改文件名了，将新版本链接中的的<code>EAapp</code>修改为<code>EADesktop</code>测试是无法获取到资源的。</p>
+</blockquote>
+<hr>
+<p>到此正文已经结束，下面是找到这个链接的过程，仅记录，不对方法有任何补充说明</p>
+<hr>
+<h2 id="折腾步骤">折腾步骤</h2>
+<h3 id="1-找规律">1. 找规律</h3>
+<p>一开始从网上收集了一下各位网友发布的离线完整包下载地址，我将链接收集保存下来并发现规律。</p>
+<p>完整包的链接样式为<code>https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EADesktop-{version}.msi</code>，这个在后来挖掘文件的时候也发现了这个样式。在第二步中的<code>u0</code>中也发现类似的，使用压缩工具打开，进入<code>u0/.rsrc/EAX_CONFIG/</code>文件夹中的<code>INTEGRATION.CFG</code>，也发现了下面的内容</p>
+<pre><code class="language-toml">[updater]
+    url = &quot;https://autopatch-integration.juno.ea.com&quot;
+[installer]
+    downloadurl = &quot;https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EAappInstaller-{version}.exe&quot;
+[telemetry]
+    ratt.url = &quot;https://ratt-dev.juno.ea.com/ratt/telm&quot;
+    pin.url = &quot;https://pin-river-test.data.ea.com/pinEvents&quot;
+[machine]
+    updateBucket = 999
+</code></pre>
+<p>可以发现<code>[installer]</code>处有个“格式化”的链接，但是到后面发现这个并不是，只要你带入版本号去下载，其实下载的还是在线安装包，不过EA可能也保存了之前老版本的安装器，毕竟能下载，不过这点没有去验证。</p>
+<p>已经知道了链接的方式，那么我从收集来的下载链接中提取出版本号，也就是<code>{version}</code>的内容，并形成一张表（最后一行是最后加的）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">xx</th>
+<th style="text-align:center">.x</th>
+<th style="text-align:center">.xxx</th>
+<th style="text-align:center">.xxxx</th>
+<th style="text-align:center">-xxx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">4820</td>
+<td style="text-align:center">153</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">4941</td>
+<td style="text-align:center">417</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">113</td>
+<td style="text-align:center">4970</td>
+<td style="text-align:center">474</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">150</td>
+<td style="text-align:center">5030</td>
+<td style="text-align:center">639</td>
+</tr>
+</tbody>
+</table>
+<p>那么最新的版本号从哪里来？当时我也是突发想法，查看了<code>EAappInstaller.exe</code>的属性，查看这个文件的版本号，得到了<code>12.0.150.5030</code>，最后找到的结果也证实了确实是这个。</p>
+<p>但是通过收集的链接会发现还有小尾巴 <code>-xxx</code>，如何得到？我当时通过表格企图找到规律，但是这个值不是简单的规律，只能知道<code>xx.x.xxx.xxxx</code>越大<code>-xxx</code>也越大。</p>
+<h3 id="2-获取在线安装器的临时配置文件">2. 获取在线安装器的临时配置文件</h3>
+<p>参考<a href="https://answers.ea.com/t5/Bug-Reports-Technical-Issues/Can-t-install-reinstall-EA-Desktop/td-p/9805968">Can't install/reinstall EA Desktop - EA问答</a></p>
+<p>按照方法，的确获取到了下载的链接。不过需要运行在线安装器，生成临时的配置文件。</p>
+<h3 id="3-网络抓包">3. 网络抓包</h3>
+<p>当时想着<code>{version}</code>会不会是通过网络获取的，而这个安装器是一个“通用”的安装器。（这个最后思考了下是不可能的，如果是通用的安装器，那么为什么程序的签名时间是最近的时间）</p>
+<p>安装<code>fiddler</code>进行抓包，使用签名获取的版本号进行搜索，复现正常安装流程到下载文件阶段。</p>
+<p>发现只有两个匹配的网络请求，最早出现版本号的位置再向更早的时间摸索，并没有发现有请求已经返回版本号的存在，所以当时判断不来源在线。</p>
+<h3 id="4-挖掘文件">4. 挖掘文件</h3>
+<p>其实之前就一直在翻文件内容，只不过当时没有注意到没有换行，第二步发现的<code>0</code>其实也打开了不止三次，只是最后才更加注意了，发现是个长的单行，当时就打开自动换行功能，发现了链接位置。</p>
+<p><s>(其实一直开着搜索版本号把文件都打开了一遍，发现这里有匹配项而已)</s></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Steam 在浏览器上使用脚本领取游戏]]></title>
+        <id>https://huiaei.github.io/post/steam-zai-liu-lan-qi-shang-shi-yong-jiao-ben-ling-qu-you-xi/</id>
+        <link href="https://huiaei.github.io/post/steam-zai-liu-lan-qi-shang-shi-yong-jiao-ben-ling-qu-you-xi/">
+        </link>
+        <updated>2023-12-06T11:31:53.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="单独激活">单独激活</h3>
+<ol>
+<li>首先登录网页版Steam 账号。 <a href="https://store.steampowered.com/">https://store.steampowered.com/</a></li>
+<li>点击右上角自己账号 ----账户明细 ----许可和产品序列号激活</li>
+<li>获取需要的游戏ID，可前往<a href="https://steamdb.info">SteamDB</a>查询</li>
+<li><code>F12</code>打开控制台</li>
+<li>输入AddFreeLicense(<code>游戏ID</code>);</li>
+</ol>
+<h3 id="批量激活">批量激活</h3>
+<ol>
+<li>首先登录网页版Steam 账号。 <a href="https://store.steampowered.com/">https://store.steampowered.com/</a></li>
+<li>点击右上角自己账号 ----账户明细 ----许可和产品序列号激活</li>
+<li>获取需要的游戏ID，可前往<a href="https://steamdb.info">SteamDB</a>查询</li>
+<li><code>F12</code>打开控制台</li>
+<li>右键粘贴代码，在注释下方添加需要添加游戏的游戏ID，之后回车。</li>
+</ol>
+<p>添加位置如下</p>
+<pre><code class="language-javascript">    var freePackages =
+	[
+		//格式：请在下面输入游戏id。
+        //游戏id,
+        //游戏id,
+        //...,
+        --&gt;在这里添加游戏ID，每行结束以`,`结尾。&lt;--
+        --&gt;不要把直接把ID粘贴在这，需要粘贴在下方完整代码对应位置中&lt;--
+	];
+</code></pre>
+<p>完整代码如下</p>
+<pre><code>(function()
+{
+    if( location.href.match( /^https:\/\/store\.steampowered\.com\/account\/licenses\/?$/ ) === null )
+	{
+		alert( '请在Steam帐号明细页面运行这些代码: https://store.steampowered.com/account/licenses/' );
+
+		window.location = 'https://store.steampowered.com/account/licenses/';
+
+		return;
+	}
+	
+	var freePackages =
+	[
+		//格式：请在下面输入游戏id。
+        //游戏id,
+        //游戏id,
+        //...,
+	];
+	
+	var ownedPackages = {};
+	
+	jQuery( '.account_table a' ).each( function( i, el )
+	{
+		var match = el.href.match( /javascript:RemoveFreeLicense\( ([0-9]+), '/ );
+		
+		if( match !== null )
+		{
+			ownedPackages[ +match[ 1 ] ] = true;
+		}
+	} );
+	
+	var i = 0,
+	    loaded = 0,
+	    package = 0,
+	    total = freePackages.length,
+	    modal = ShowBlockingWaitDialog( '努力执行中...',
+	    	'请耐心等待，如果有错误请无视，请耐心等待脚本加载完毕' );
+	
+	for( ; i &lt; total; i++ )
+	{
+		package = freePackages[ i ];
+		
+		if( ownedPackages[ package ] )
+		{
+			loaded++;
+			continue;
+		}
+		
+		jQuery.post(
+			'//store.steampowered.com/checkout/addfreelicense',
+			{
+				action: 'add_to_cart',
+				sessionid: g_sessionID,
+				subid: package
+			}
+		).always( function( )
+			{
+				loaded++;
+				
+				modal.Dismiss();
+				
+				if( loaded &gt;= total )
+				{
+					location.reload();
+				}
+				else
+				{
+					modal = ShowBlockingWaitDialog( '执行中...',
+						'加载至 &lt;b&gt;' + loaded + '&lt;/b&gt;/' + total + '.' );
+				}
+			}
+		);
+	}
+}());
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Origin （EA游戏平台）主程序离线安装包下载连接]]></title>
+        <id>https://huiaei.github.io/post/origin-ea-you-xi-ping-tai-zhu-cheng-xu-chi-xian-an-zhuang-bao-xia-zai-lian-jie/</id>
+        <link href="https://huiaei.github.io/post/origin-ea-you-xi-ping-tai-zhu-cheng-xu-chi-xian-an-zhuang-bao-xia-zai-lian-jie/">
+        </link>
+        <updated>2023-12-06T11:31:10.000Z</updated>
+        <content type="html"><![CDATA[<h1 id=""></h1>
+<pre><code>推荐使用多线程工具下载
+</code></pre>
+<p><a href="https://download.dm.origin.com/origin/live/OriginSetup.exe">https://download.dm.origin.com/origin/live/OriginSetup.exe</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows远程桌面连接使用微软账户登录]]></title>
+        <id>https://huiaei.github.io/post/windows-yuan-cheng-zhuo-mian-lian-jie-shi-yong-wei-ruan-zhang-hu-deng-lu/</id>
+        <link href="https://huiaei.github.io/post/windows-yuan-cheng-zhuo-mian-lian-jie-shi-yong-wei-ruan-zhang-hu-deng-lu/">
+        </link>
+        <updated>2023-12-06T11:30:41.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>打开<code>远程桌面连接</code>或者其他进行RDP连接的应用软件（以<code>远程桌面连接</code>为例）</li>
+<li><code>计算机</code>填写远程设备的IP地址或者域名（RDP默认端口为<code>3389</code>）</li>
+<li><code>用户名</code>填写微软账户的邮箱地址</li>
+<li>点击<code>连接</code></li>
+<li>使用微软账户的密码进行登录</li>
+</ol>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="微软账户的邮箱地址和密码输入正确但是无法登录">微软账户的邮箱地址和密码输入正确但是无法登录</h3>
+<ul>
+<li>
+<p>请尝试将<code>计算机</code>填写成 <code>MicrosoftAccount\{微软账户邮箱地址}</code>的形式</p>
+</li>
+<li>
+<p>在远程连接目标设备上使用<code>运行</code>（Windows+R）执行下列任选一行</p>
+<pre><code>runas /u:{微软账户邮箱地址} cmd.exe
+runas /u:MicrosoftAccount\{微软账户邮箱地址} cmd.exe
+</code></pre>
+<p>在弹出来的CLI（命令行）窗口按照提示输入微软账户密码</p>
+<p>命令的意思是使用<code>{微软账户邮箱地址}</code>的身份运行<code>cmd.exe</code></p>
+<p>此操作用意在于刷新微软账户在远程连接设备上的凭证缓存</p>
+</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p><a href="https://docs.microsoft.com/en-us/answers/questions/369584/windows-10-home-to-pro-upgrade-need-to-update-pers.html">Windows 10 RDP not working using Microsoft account (local accounts are working)</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Onedrive设置多线程传输]]></title>
+        <id>https://huiaei.github.io/post/onedrive-she-zhi-duo-xian-cheng-chuan-shu/</id>
+        <link href="https://huiaei.github.io/post/onedrive-she-zhi-duo-xian-cheng-chuan-shu/">
+        </link>
+        <updated>2023-12-06T11:30:20.000Z</updated>
+        <content type="html"><![CDATA[<p>修改文件： &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot; 向第一行加入： numberOfConcurrentUploads=3</p>
+<blockquote>
+<p>PS：数值项即为线程数，最小值为1，最大值为3，根据实际需要选择即可</p>
+</blockquote>
+<p>可通过<code>Windows</code>+<code>R</code>运行，或cmd里运行下面直接打开修改： notepad &quot;%localappdata%\Microsoft\OneDrive\settings\Personal\global.ini&quot;</p>
+<hr>
+<blockquote>
+<p><a href="https://blog.tcpsoft.app/2020/03/let-onedrive-fly-scientifically/">https://blog.tcpsoft.app/2020/03/let-onedrive-fly-scientifically/</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mklink 命令（符号链接、目录链接、硬链接、快捷方式的区别）]]></title>
+        <id>https://huiaei.github.io/post/mklink-ming-ling-fu-hao-lian-jie-mu-lu-lian-jie-ying-lian-jie-kuai-jie-fang-shi-de-qu-bie/</id>
+        <link href="https://huiaei.github.io/post/mklink-ming-ling-fu-hao-lian-jie-mu-lu-lian-jie-ying-lian-jie-kuai-jie-fang-shi-de-qu-bie/">
+        </link>
+        <updated>2023-12-06T11:29:46.000Z</updated>
+        <content type="html"><![CDATA[<h1 id=""></h1>
+<table>
+<thead>
+<tr>
+<th>链接类型</th>
+<th>命令</th>
+<th>文件类型</th>
+<th>文件路径</th>
+<th>空间占用</th>
+<th>可链接类型</th>
+<th>本质</th>
+<th>Windows下是否可跨磁盘</th>
+<th>访问方式</th>
+<th>源文件与链接文件关联关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>符号链接（软链接）</td>
+<td>/d</td>
+<td>.symlinkd</td>
+<td>相对路径；绝对路径</td>
+<td>不占空间</td>
+<td>目录</td>
+<td>相当于只是对源文件进行引用，只有使用权，没有所有权</td>
+<td>本地磁盘；网络磁盘（共享目录）</td>
+<td>本地访问：通过链接目录所在磁盘路径访问；网络访问：通过tomcat可实现</td>
+<td>源删除链接失效；链接删除源保留；源内容变化链接内容变化；链接内容变化源内容变化</td>
+</tr>
+<tr>
+<td>目录链接（软链接）</td>
+<td>/j</td>
+<td>.junction</td>
+<td>绝对路径</td>
+<td>同上条</td>
+<td>同上条</td>
+<td>同上条，链接点</td>
+<td>本地硬盘</td>
+<td>同上条</td>
+<td>同上条</td>
+</tr>
+<tr>
+<td>硬链接</td>
+<td>/h</td>
+<td>.源文件类型</td>
+<td>同上条</td>
+<td>占用与原文件一致</td>
+<td>文件</td>
+<td>相当于复制粘贴</td>
+<td>不可以</td>
+<td>同上条</td>
+<td>同上条</td>
+</tr>
+<tr>
+<td>快捷方式</td>
+<td>批处理</td>
+<td>.lnk</td>
+<td>同上条</td>
+<td>文件大约1k，与源文件无关</td>
+<td>文件、目录</td>
+<td>本地磁盘</td>
+<td>跳转到源所在位置访问；无法通过网络访问源</td>
+<td>源删除链接失效；链接删除源保留；只是个快捷方式</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git 命令使用/取消代理]]></title>
+        <id>https://huiaei.github.io/post/git-ming-ling-shi-yong-qu-xiao-dai-li/</id>
+        <link href="https://huiaei.github.io/post/git-ming-ling-shi-yong-qu-xiao-dai-li/">
+        </link>
+        <updated>2023-12-06T11:29:18.000Z</updated>
+        <content type="html"><![CDATA[<p>假设代理到目标 socks5://127.0.0.1:10808</p>
+<ol>
+<li>全局代理 git config --global http.proxy socks5://127.0.0.1:10808 git config --global https.proxy socks5://127.0.0.1:10808</li>
+<li>部分代理 git config --global http.https://github.com.proxy socks5://127.0.0.1:10808 git config --global https.https://github.com.proxy socks5://127.0.0.1:10808</li>
+<li>取消代理 git config --global --unset http.proxy git config --global --unset https.proxy</li>
+</ol>
+<blockquote>
+<p>参考自: https://blog.gobyte.cn/post/1a22163b.html https://blog.csdn.net/tanningzhong/article/details/52817399</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker容器中无法运行二进制文件并出现：/bin/sh: xxx not found]]></title>
+        <id>https://huiaei.github.io/post/docker-rong-qi-zhong-wu-fa-yun-xing-er-jin-zhi-wen-jian-bing-chu-xian-binsh-xxx-not-found/</id>
+        <link href="https://huiaei.github.io/post/docker-rong-qi-zhong-wu-fa-yun-xing-er-jin-zhi-wen-jian-bing-chu-xian-binsh-xxx-not-found/">
+        </link>
+        <updated>2023-12-06T11:28:24.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="问题">问题</h2>
+<p>在Docker容器中，运行二进制文件出现 <code>/bin/sh: xxx not found</code> ，使用 Chmod 赋予执行权限依旧出现此问题。</p>
+<h2 id="解决">解决</h2>
+<p>容器内执行 <code>mkdir /lib64 &amp;&amp; ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2</code></p>
+<h2 id="原因">原因</h2>
+<p>镜像可能使用的是以alpine镜像为基础的项目，可能出现动态链接库位置错误问题。</p>
+<p>一般二进制文件在linux系统下编译，动态链接库是到/lib64目录下的，而在alpine镜像内无/lib64目录(<a href="https://github.com/gliderlabs/docker-alpine/issues/11">参考</a>)。</p>
+<p>alpine镜像使用的是musl libc而不是gun libc，因而动态链接库的位置不一致。</p>
+<h2 id="参考">参考</h2>
+<p>https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker</p>
+<p>https://github.com/docker-library/openjdk/issues/77</p>
+<p>https://github.com/gliderlabs/docker-alpine/issues/11</p>
+<p>https://github.com/sgerrand/alpine-pkg-glibc/releases</p>
+<hr>
+<p>引用自：<a href="https://blog.51cto.com/welcomeweb/2652026">alpine镜像启动的容器内运行二进制文件出现：/bin/sh: xxx not found</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CCleaner专业版断网激活]]></title>
+        <id>https://huiaei.github.io/post/ccleaner-zhuan-ye-ban-duan-wang-ji-huo/</id>
+        <link href="https://huiaei.github.io/post/ccleaner-zhuan-ye-ban-duan-wang-ji-huo/">
+        </link>
+        <updated>2023-12-06T11:27:45.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>断开所有网络</li>
+<li>输入以下任意一种到注册栏中注册激活</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">密钥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Registered User</td>
+<td style="text-align:center">CBB4-FJN4-EPC6-G5P6-QT4C</td>
+</tr>
+<tr>
+<td style="text-align:center">任意</td>
+<td style="text-align:center">C2YW-XZT7-A4SE-UD89-YZPC</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>激活完后即可恢复网络</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea 检查远程连接失败的一个解决方法]]></title>
+        <id>https://huiaei.github.io/post/gridea-jian-cha-yuan-cheng-lian-jie-shi-bai-de-yi-ge-jie-jue-fang-fa/</id>
+        <link href="https://huiaei.github.io/post/gridea-jian-cha-yuan-cheng-lian-jie-shi-bai-de-yi-ge-jie-jue-fang-fa/">
+        </link>
+        <updated>2023-12-06T11:26:43.000Z</updated>
+        <content type="html"><![CDATA[<p>我使用的是 Windows 版本，Gridea 版本是 0.9.1 。 当时键入了配置完成；保存；检查远程连接。发现提示 <strong>远程连接失败，请检查仓库、用户名和 Token 设置</strong>，在其<strong>开发者工具</strong>中提示</p>
+<pre><code>    message: &quot;fatal: No such remote 'origin'↵&quot;
+    success: false
+</code></pre>
+<p>之后我向 Gridea 提出 issue 。 <a href="https://github.com/yz0812">yz0812</a> 提示了 Gridea 其保存目录的 .git/config 文件中 url 格式应为</p>
+<pre><code>https://username:token@github.com/**.github.io.git
+</code></pre>
+<p>后，我打开所在文件，并没有发现有类似格式。</p>
+<hr>
+<p>也受其提示，突发奇想。先将 Page 项目使用 git 给 clone 下来；完成后，打开项目文件夹，打开其 .git/config 文件，将包括上面 url 格式的那一段，复制到 Gridea 的 .git/config 中，保存文件。之后再检查连接，成功。</p>
+]]></content>
+    </entry>
+</feed>

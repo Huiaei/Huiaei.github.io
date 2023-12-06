@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Arch/Manjaro（pacman）配置国内源 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+更改源
+
+
+使用pacman-mirros更改镜像软件库所在国家 sudo pacman-mirrors -i -c China -m rank
+或者使用nano或vim打开/etc/pacman.d/mirrorlist 添加源服务器链..." />
+    <meta name="keywords" content="Linux" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Arch/Manjaro（pacman）配置国内源</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <ol>
+<li>更改源</li>
+</ol>
+<ul>
+<li>使用<code>pacman-mirros</code>更改镜像软件库所在国家 <code>sudo pacman-mirrors -i -c China -m rank</code></li>
+<li>或者使用nano或vim打开<code>/etc/pacman.d/mirrorlist</code> 添加源服务器链接并保存，例如，清华源 <code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</code></li>
+</ul>
+<ol>
+<li>使用命令<code>pacman -Syy</code>强制刷新软件库缓存</li>
+<li>可选选择 安装<code>archlinuxcn</code> 1. 打开<code>/etc/pacman.conf</code> 2. 在末尾添加</li>
+</ol>
+<pre><code>[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre>
+<p>服务器可选以下，只需替换<code>Server =</code>之后的链接（搜集不全，如有缺失，欢迎补充）</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中科大</td>
+<td>https://mirrors.ustc.edu.cn/archlinuxcn/$arch</td>
+</tr>
+<tr>
+<td>网易</td>
+<td>http://mirrors.163.com/archlinux-cn/$arch</td>
+</tr>
+<tr>
+<td>腾讯云</td>
+<td>https://mirrors.cloud.tencent.com/archlinuxcn/$arch</td>
+</tr>
+<tr>
+<td>----</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>推荐参考资料：<a href="https://wiki.archlinux.org">archwiki</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huiaei.github.io/tag/fjZY7ycwP/" class="tag">
+                    Linux
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

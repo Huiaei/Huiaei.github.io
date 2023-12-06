@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>WSL 工具 LxRunOffline 相关参数 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+基于版本3.5.0 项目地址：https://github.com/DDoSolitary/LxRunOffline
+
+
+支持的操作有：
+
+
+
+
+简写参数
+完整参数
+解释
+
+
+
+
+l
+list
+列出所有已安装的发行版
+
+
+gd
+get-d..." />
+    <meta name="keywords" content="WSL,Linux" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">WSL 工具 LxRunOffline 相关参数</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<p>基于版本3.5.0 项目地址：<a href="https://github.com/DDoSolitary/LxRunOffline">https://github.com/DDoSolitary/LxRunOffline</a></p>
+</blockquote>
+<ul>
+<li>支持的操作有：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">简写参数</th>
+<th>完整参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">l</td>
+<td>list</td>
+<td>列出所有已安装的发行版</td>
+</tr>
+<tr>
+<td style="text-align:right">gd</td>
+<td>get-default</td>
+<td>获取默认分发，由bash.exe使用</td>
+</tr>
+<tr>
+<td style="text-align:right">sd</td>
+<td>set-default</td>
+<td>设置默认分发，由bash.exe使用</td>
+</tr>
+<tr>
+<td style="text-align:right">i</td>
+<td>install</td>
+<td>安装新的发行版</td>
+</tr>
+<tr>
+<td style="text-align:right">ui</td>
+<td>uninstall</td>
+<td>卸载发行版</td>
+</tr>
+<tr>
+<td style="text-align:right">rg</td>
+<td>register</td>
+<td>注册现有的安装目录</td>
+</tr>
+<tr>
+<td style="text-align:right">ur</td>
+<td>unregister</td>
+<td>注销发行版，但不删除安装目录</td>
+</tr>
+<tr>
+<td style="text-align:right">m</td>
+<td>move</td>
+<td>将发行版移动到新目录</td>
+</tr>
+<tr>
+<td style="text-align:right">d</td>
+<td>duplicate</td>
+<td>在新目录中复制现有发行版</td>
+</tr>
+<tr>
+<td style="text-align:right">e</td>
+<td>export</td>
+<td>将发行版的文件系统导出到.tar.gz文件，该文件可以通过“install”命令导入</td>
+</tr>
+<tr>
+<td style="text-align:right">r</td>
+<td>run</td>
+<td>在发行版中运行命令</td>
+</tr>
+<tr>
+<td style="text-align:right">di</td>
+<td>get-dir</td>
+<td>获取发行版的安装目录</td>
+</tr>
+<tr>
+<td style="text-align:right">gv</td>
+<td>get-version</td>
+<td>获取发行版的文件系统版本</td>
+</tr>
+<tr>
+<td style="text-align:right">ge</td>
+<td>get-env</td>
+<td>获取发行版的默认环境变量</td>
+</tr>
+<tr>
+<td style="text-align:right">se</td>
+<td>set-env</td>
+<td>设置发行版的默认环境变量。</td>
+</tr>
+<tr>
+<td style="text-align:right">ae</td>
+<td>add-env</td>
+<td>添加到发行版的默认环境变量。</td>
+</tr>
+<tr>
+<td style="text-align:right">re</td>
+<td>remove-env</td>
+<td>从发行版的默认环境变量中删除。</td>
+</tr>
+<tr>
+<td style="text-align:right">gu</td>
+<td>get-uid</td>
+<td>获取发行版的默认用户的UID。</td>
+</tr>
+<tr>
+<td style="text-align:right">su</td>
+<td>set-uid</td>
+<td>设置发行版的默认用户的UID。</td>
+</tr>
+<tr>
+<td style="text-align:right">gk</td>
+<td>get-kernelcmd</td>
+<td>获取发行版的默认内核命令行。</td>
+</tr>
+<tr>
+<td style="text-align:right">sk</td>
+<td>set-kernelcmd</td>
+<td>设置发行版的默认内核命令行。</td>
+</tr>
+<tr>
+<td style="text-align:right">gf</td>
+<td>get-flags</td>
+<td>获取一些发行版的标志。有关详细信息，请参见<a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags">url</a></td>
+</tr>
+<tr>
+<td style="text-align:right">sf</td>
+<td>set-flags</td>
+<td>设置发行版的一些标志。有关详细信息，请参见<a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags">url</a></td>
+</tr>
+<tr>
+<td style="text-align:right">s</td>
+<td>shortcut</td>
+<td>创建启动发布的快捷方式。</td>
+</tr>
+<tr>
+<td style="text-align:right">ec</td>
+<td>export-config</td>
+<td>将发行版的配置导出到XML文件。</td>
+</tr>
+<tr>
+<td style="text-align:right">ic</td>
+<td>import-config</td>
+<td>从XML文件导入发行版的配置</td>
+</tr>
+<tr>
+<td style="text-align:right">sm</td>
+<td>summary</td>
+<td>获取发行版的基本信息</td>
+</tr>
+<tr>
+<td style="text-align:right"></td>
+<td>version</td>
+<td>获取有关LxRunOffline版本信息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>附属参数：(可能不完整)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n</td>
+<td>发行版的名称</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>发行版安装目录</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>包含要安装的发行版的根文件系统的tar文件。如果存在一个扩展名为.xml的相同名称的文件，并且没有指定“-c”，则该文件将作为配置文件导入。</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>要提取的tar文件中的目录，可选选项</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>要使用的配置文件，可选选项</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>要使用的文件系统版本，如果未指定，则为最新可用版本。</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>在桌面上创建快捷方式</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huiaei.github.io/tag/RfPMF-edT/" class="tag">
+                    WSL
+                  </a>
+                
+                  <a href="https://huiaei.github.io/tag/fjZY7ycwP/" class="tag">
+                    Linux
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://huiaei.github.io/post/wslwindows-zi-xi-tong-linuxshe-zhi-mo-ren-shell-wei-zsh/">
+                  <h3 class="post-title">
+                    WSL（Windows子系统Linux）设置默认 Shell 为 Zsh
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

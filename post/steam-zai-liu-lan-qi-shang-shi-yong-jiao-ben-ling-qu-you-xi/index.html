@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Steam 在浏览器上使用脚本领取游戏 | Huiaei&#39;s Notebook</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://huiaei.github.io/favicon.ico?v=1701862531749">
+<link rel="stylesheet" href="https://huiaei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="单独激活
+
+首先登录网页版Steam 账号。 https://store.steampowered.com/
+点击右上角自己账号 ----账户明细 ----许可和产品序列号激活
+获取需要的游戏ID，可前往SteamDB查询
+F12打开控制台..." />
+    <meta name="keywords" content="Steam,游戏" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://huiaei.github.io">
+        <img src="https://huiaei.github.io/images/avatar.png?v=1701862531749" class="site-logo">
+        <h1 class="site-title">Huiaei&#39;s Notebook</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用笔记本一方面把重要的记下来，另一方面，某些地方我不同意书里的讲法，可以写上一段自己的看法，表示自己的意思。 ——鲁  迅
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://huiaei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Steam 在浏览器上使用脚本领取游戏</h2>
+            <div class="post-date">2023-12-06</div>
+            
+            <div class="post-content" v-pre>
+              <h3 id="单独激活">单独激活</h3>
+<ol>
+<li>首先登录网页版Steam 账号。 <a href="https://store.steampowered.com/">https://store.steampowered.com/</a></li>
+<li>点击右上角自己账号 ----账户明细 ----许可和产品序列号激活</li>
+<li>获取需要的游戏ID，可前往<a href="https://steamdb.info">SteamDB</a>查询</li>
+<li><code>F12</code>打开控制台</li>
+<li>输入AddFreeLicense(<code>游戏ID</code>);</li>
+</ol>
+<h3 id="批量激活">批量激活</h3>
+<ol>
+<li>首先登录网页版Steam 账号。 <a href="https://store.steampowered.com/">https://store.steampowered.com/</a></li>
+<li>点击右上角自己账号 ----账户明细 ----许可和产品序列号激活</li>
+<li>获取需要的游戏ID，可前往<a href="https://steamdb.info">SteamDB</a>查询</li>
+<li><code>F12</code>打开控制台</li>
+<li>右键粘贴代码，在注释下方添加需要添加游戏的游戏ID，之后回车。</li>
+</ol>
+<p>添加位置如下</p>
+<pre><code class="language-javascript">    var freePackages =
+	[
+		//格式：请在下面输入游戏id。
+        //游戏id,
+        //游戏id,
+        //...,
+        --&gt;在这里添加游戏ID，每行结束以`,`结尾。&lt;--
+        --&gt;不要把直接把ID粘贴在这，需要粘贴在下方完整代码对应位置中&lt;--
+	];
+</code></pre>
+<p>完整代码如下</p>
+<pre><code>(function()
+{
+    if( location.href.match( /^https:\/\/store\.steampowered\.com\/account\/licenses\/?$/ ) === null )
+	{
+		alert( '请在Steam帐号明细页面运行这些代码: https://store.steampowered.com/account/licenses/' );
+
+		window.location = 'https://store.steampowered.com/account/licenses/';
+
+		return;
+	}
+	
+	var freePackages =
+	[
+		//格式：请在下面输入游戏id。
+        //游戏id,
+        //游戏id,
+        //...,
+	];
+	
+	var ownedPackages = {};
+	
+	jQuery( '.account_table a' ).each( function( i, el )
+	{
+		var match = el.href.match( /javascript:RemoveFreeLicense\( ([0-9]+), '/ );
+		
+		if( match !== null )
+		{
+			ownedPackages[ +match[ 1 ] ] = true;
+		}
+	} );
+	
+	var i = 0,
+	    loaded = 0,
+	    package = 0,
+	    total = freePackages.length,
+	    modal = ShowBlockingWaitDialog( '努力执行中...',
+	    	'请耐心等待，如果有错误请无视，请耐心等待脚本加载完毕' );
+	
+	for( ; i &lt; total; i++ )
+	{
+		package = freePackages[ i ];
+		
+		if( ownedPackages[ package ] )
+		{
+			loaded++;
+			continue;
+		}
+		
+		jQuery.post(
+			'//store.steampowered.com/checkout/addfreelicense',
+			{
+				action: 'add_to_cart',
+				sessionid: g_sessionID,
+				subid: package
+			}
+		).always( function( )
+			{
+				loaded++;
+				
+				modal.Dismiss();
+				
+				if( loaded &gt;= total )
+				{
+					location.reload();
+				}
+				else
+				{
+					modal = ShowBlockingWaitDialog( '执行中...',
+						'加载至 &lt;b&gt;' + loaded + '&lt;/b&gt;/' + total + '.' );
+				}
+			}
+		);
+	}
+}());
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://huiaei.github.io/tag/viws2e_Id/" class="tag">
+                    Steam
+                  </a>
+                
+                  <a href="https://huiaei.github.io/tag/XpFPN67LV/" class="tag">
+                    游戏
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://huiaei.github.io/post/origin-ea-you-xi-ping-tai-zhu-cheng-xu-chi-xian-an-zhuang-bao-xia-zai-lian-jie/">
+                  <h3 class="post-title">
+                    Origin （EA游戏平台）主程序离线安装包下载连接
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
